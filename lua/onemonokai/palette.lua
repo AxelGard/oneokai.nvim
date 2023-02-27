@@ -5,11 +5,12 @@ local monokai = {
         comment = "#75715E",
         red = "#e06a60",
         orange = "#FD971F",
-        yellow = "#e3c179",
+        yellow = "#e2b875",
         green = "#8ec379",
         cyan = "#56b6c2",
         blue = "#268BD2",
         purple = "#AE81FF",
+        bage = "#d19a66"
     }
 
 return {
@@ -26,7 +27,7 @@ return {
 		fg = "#abb2bf",
 		purple = monokai.cyan,
 		green = monokai.yellow,
-		orange = "#d19a66",
+		orange = monokai.purple,
 		blue = monokai.green,
 		yellow = monokai.red,
 		cyan = monokai.red,
@@ -34,8 +35,8 @@ return {
 		grey = "#5c6370",
 		light_grey = "#848b98",
 		dark_cyan = monokai.red,
-		dark_red = monokai.orange,
-		dark_yellow = "#93691d",
+		dark_red = monokai.bage,
+		dark_yellow = monokai.blue,
 		dark_purple = monokai.cyan,
 		diff_add = "#31392b",
 		diff_delete = "#382b2c",

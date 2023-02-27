@@ -16,6 +16,7 @@ So I googled around and found [cpea2506/one_monokai.nvim](https://github.com/cpe
 It looked like the thing a wanted, but I noticed that in some cases that the colors felt of and some things where had the wrong color. So I switched to using onedark.nvim. But I was missing one monokai. 
 So I decided to fork onedrak.nvim and remap the colors to be one monokai. Meaning that I have done a direct color re-mapping from onedark.nvim to One Monokai.
 
+## this package is still in early stages and might change a lot, it is not at all done ...
 
 ## install 
 Install via package manager

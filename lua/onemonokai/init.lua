@@ -2,43 +2,43 @@ local M = {}
 
 M.styles_list = { 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer', 'light' }
 
----Change onedark option (vim.g.onedark_config.option)
----It can't be changed directly by modifing that field due to a Neovim lua bug with global variables (onedark_config is a global variable)
+---Change onemonokai option (vim.g.onemonokai_config.option)
+---It can't be changed directly by modifing that field due to a Neovim lua bug with global variables (onemonokai_config is a global variable)
 ---@param opt string: option name
 ---@param value any: new value
 function M.set_options(opt, value)
-    local cfg = vim.g.onedark_config
+    local cfg = vim.g.onemonokai_config
     cfg[opt] = value
-    vim.g.onedark_config = cfg
+    vim.g.onemonokai_config = cfg
 end
 
----Apply the colorscheme (same as ':colorscheme onedark')
+---Apply the colorscheme (same as ':colorscheme onemonokai')
 function M.colorscheme()
     vim.cmd("hi clear")
     if vim.fn.exists("syntax_on") then vim.cmd("syntax reset") end
     vim.o.termguicolors = true
-    vim.g.colors_name = "onedark"
+    vim.g.colors_name = "onemonokai"
     if vim.o.background == 'light' then
         M.set_options('style', 'light')
-    elseif vim.g.onedark_config.style == 'light' then
+    elseif vim.g.onemonokai_config.style == 'light' then
         M.set_options('style', 'dark')
     end
-    require('onedark.highlights').setup()
-    require('onedark.terminal').setup()
+    require('onemonokai.highlights').setup()
+    require('onemonokai.terminal').setup()
 end
 
----Toggle between onedark styles
+---Toggle between onemonokai styles
 function M.toggle()
-    local index = vim.g.onedark_config.toggle_style_index + 1
-    if index > #vim.g.onedark_config.toggle_style_list then index = 1 end
-    M.set_options('style', vim.g.onedark_config.toggle_style_list[index])
+    local index = vim.g.onemonokai_config.toggle_style_index + 1
+    if index > #vim.g.onemonokai_config.toggle_style_list then index = 1 end
+    M.set_options('style', vim.g.onemonokai_config.toggle_style_list[index])
     M.set_options('toggle_style_index', index)
-    if vim.g.onedark_config.style == 'light' then
+    if vim.g.onemonokai_config.style == 'light' then
         vim.o.background = 'light'
     else
         vim.o.background = 'dark'
     end
-    vim.api.nvim_command('colorscheme onedark')
+    vim.api.nvim_command('colorscheme onemonokai')
 end
 
 local default_config = {
@@ -77,27 +77,27 @@ local default_config = {
     },
 }
 
----Setup onedark.nvim options, without applying colorscheme
+---Setup onemonokai.nvim options, without applying colorscheme
 ---@param opts table: a table containing options
 function M.setup(opts)
-    if not vim.g.onedark_config or not vim.g.onedark_config.loaded then    -- if it's the first time setup() is called
-        vim.g.onedark_config = vim.tbl_deep_extend('keep', vim.g.onedark_config or {}, default_config)
+    if not vim.g.onemonokai_config or not vim.g.onemonokai_config.loaded then    -- if it's the first time setup() is called
+        vim.g.onemonokai_config = vim.tbl_deep_extend('keep', vim.g.onemonokai_config or {}, default_config)
         M.set_options('loaded', true)
         M.set_options('toggle_style_index', 0)
     end
     if opts then
-        vim.g.onedark_config = vim.tbl_deep_extend('force', vim.g.onedark_config, opts)
+        vim.g.onemonokai_config = vim.tbl_deep_extend('force', vim.g.onemonokai_config, opts)
         if opts.toggle_style_list then    -- this table cannot be extended, it has to be replaced
             M.set_options('toggle_style_list', opts.toggle_style_list)
         end
     end
-    if vim.g.onedark_config.toggle_style_key then
-      vim.api.nvim_set_keymap('n', vim.g.onedark_config.toggle_style_key, '<cmd>lua require("onedark").toggle()<cr>', { noremap = true, silent = true })
+    if vim.g.onemonokai_config.toggle_style_key then
+      vim.api.nvim_set_keymap('n', vim.g.onemonokai_config.toggle_style_key, '<cmd>lua require("onemonokai").toggle()<cr>', { noremap = true, silent = true })
     end
 end
 
 function M.load()
-  vim.api.nvim_command('colorscheme onedark')
+  vim.api.nvim_command('colorscheme onemonokai')
 end
 
 return M

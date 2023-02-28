@@ -1,14 +1,4 @@
-return {
-	dark = {
-		black = "#181a1f",
-		bg0 = "#282c34",
-		bg1 = "#31353f",
-		bg2 = "#393f4a",
-		bg3 = "#3b3f4c",
-		bg_d = "#21252b",
-		bg_blue = "#73b8f1",
-		bg_yellow = "#ebd09c",
-		fg = "#abb2bf",
+local col = {
 		purple = "#c678dd",
 		green = "#98c379",
 		orange = "#d19a66",
@@ -22,6 +12,33 @@ return {
 		dark_red = "#993939",
 		dark_yellow = "#93691d",
 		dark_purple = "#8a3fa0",
+}
+
+
+return {
+	dark = {
+		black = "#181a1f",
+		bg0 = "#282c34",
+		bg1 = "#31353f",
+		bg2 = "#393f4a",
+		bg3 = "#3b3f4c",
+		bg_d = "#21252b",
+		bg_blue = "#73b8f1",
+		bg_yellow = "#ebd09c",
+		fg = "#abb2bf",
+		purple = col.red,
+		green = col.yellow,
+		orange = col.purple,
+		blue = col.green,
+		yellow = "#e5c07b",
+		cyan = "#56b6c2",
+		red = col.orange,
+		grey = "#5c6370",
+		light_grey = "#848b98",
+		dark_cyan = "#2b6f77",
+		dark_red = col.orange,
+		dark_yellow = "#93691d",
+		dark_purple = col.dark_red,
 		diff_add = "#31392b",
 		diff_delete = "#382b2c",
 		diff_change = "#1c3448",

@@ -1,6 +1,6 @@
 for k in pairs(package.loaded) do
-    if k:match(".*onemonokai.*") then package.loaded[k] = nil end
+    if k:match(".*oneokai.*") then package.loaded[k] = nil end
 end
 
-require('onemonokai').setup()
-require('onemonokai').colorscheme()
+require('oneokai').setup()
+require('oneokai').colorscheme()

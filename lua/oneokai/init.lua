@@ -1,7 +1,5 @@
 local M = {}
 
-M.styles_list = { 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer', 'light' }
-
 ---Change oneokai option (vim.g.oneokai_config.option)
 ---It can't be changed directly by modifing that field due to a Neovim lua bug with global variables (oneokai_config is a global variable)
 ---@param opt string: option name
@@ -41,47 +39,11 @@ function M.toggle()
     vim.api.nvim_command('colorscheme oneokai')
 end
 
-local default_config = {
-    -- Main options --
-    style = 'dark',    -- choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
-    toggle_style_key = nil,
-    toggle_style_list = M.styles_list,
-    transparent = false,     -- don't set background
-    term_colors = true,      -- if true enable the terminal
-    ending_tildes = false,    -- show the end-of-buffer tildes
-    cmp_itemkind_reverse = false,    -- reverse item kind highlights in cmp menu
-
-    -- Changing Formats --
-    code_style = {
-        comments = 'italic',
-        keywords = 'none',
-        functions = 'none',
-        strings = 'none',
-        variables = 'none'
-    },
-
-    -- Lualine options --
-    lualine = {
-        transparent = false, -- center bar (c) transparency
-    },
-
-    -- Custom Highlights --
-    colors = {}, -- Override default colors
-    highlights = {}, -- Override highlight groups
-
-    -- Plugins Related --
-    diagnostics = {
-        darker = true, -- darker colors for diagnostic
-        undercurl = true,   -- use undercurl for diagnostics
-        background = true,    -- use background color for virtual text
-    },
-}
-
 ---Setup oneokai.nvim options, without applying colorscheme
 ---@param opts table: a table containing options
 function M.setup(opts)
     if not vim.g.oneokai_config or not vim.g.oneokai_config.loaded then    -- if it's the first time setup() is called
-        vim.g.oneokai_config = vim.tbl_deep_extend('keep', vim.g.oneokai_config or {}, default_config)
+        vim.g.oneokai_config = vim.tbl_deep_extend('keep', vim.g.oneokai_config or {}, require("oneokai.default").config)
         M.set_options('loaded', true)
         M.set_options('toggle_style_index', 0)
     end

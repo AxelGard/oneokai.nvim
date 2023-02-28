@@ -1,5 +1,5 @@
-local c = require('onemonokai.colors')
-local cfg = vim.g.onemonokai_config
+local c = require('oneokai.colors')
+local cfg = vim.g.oneokai_config
 local colors = {
     bg = c.bg0,
     fg = c.fg,

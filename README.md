@@ -1,4 +1,4 @@
-# onemonokai.nvim
+# oneokai.nvim
 
 
 <img src="./doc/noevim-onemonokai-icon.png" style="width:30%">

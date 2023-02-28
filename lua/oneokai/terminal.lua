@@ -1,6 +1,6 @@
 local M = {}
-local cfg = vim.g.onemonokai_config
-local c = require 'onemonokai.colors'
+local cfg = vim.g.oneokai_config
+local c = require 'oneokai.colors'
 
 function M.setup()
     if not cfg.term_colors then return end

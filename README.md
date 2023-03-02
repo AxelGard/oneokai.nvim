@@ -1,9 +1,7 @@
 # oneokai.nvim
 
 
-<img src="./doc/noevim-onemonokai-icon.png" style="width:30%">
-
-### this is not complitly finished, and still needs some work, but it works to some degree. 
+<img src="./doc/noevim-onemonokai-icon.png" style="width:30%"> 
 
 A fork of [onedark.nvim](https://github.com/navarasu/onedark.nvim), 
 converted to be similar to [One Monokai](https://github.com/azemoh/vscode-one-monokai) not an exact copy.

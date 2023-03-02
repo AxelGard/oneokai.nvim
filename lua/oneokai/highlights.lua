@@ -134,7 +134,7 @@ hl.syntax = {
 if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
     hl.treesitter = {
         ["@annotation"] = colors.Fg,
-        ["@attribute"] = colors.Cyan,
+        ["@attribute"] = colors.Fg,
         ["@boolean"] = colors.Purple,
         ["@character"] = colors.Purple,
         ["@comment"] = {fg = c.grey, fmt = cfg.code_style.comments},
@@ -200,7 +200,7 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
 else
     hl.treesitter = {
         TSAnnotation = colors.Fg,
-        TSAttribute = colors.Cyan,
+        TSAttribute = colors.Fg,
         TSBoolean = colors.Purple,
         TSCharacter = colors.Purple,
         TSComment = {fg = c.grey, fmt = cfg.code_style.comments},

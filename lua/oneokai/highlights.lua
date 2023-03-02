@@ -447,13 +447,13 @@ hl.plugins.nvim_tree = {
     NvimTreeEndOfBuffer = { fg = cfg.ending_tildes and c.bg2 or c.bg_d, bg = cfg.transparent and c.none or c.bg_d },
     NvimTreeRootFolder = { fg = c.purple, fmt = "bold" },
     NvimTreeGitDirty = colors.Yellow,
-    NvimTreeGitNew = colors.Yellow,
+    NvimTreeGitNew = colors.Green,
     NvimTreeGitDeleted = colors.Orange,
     NvimTreeSpecialFile = { fg = c.yellow, fmt = "underline" },
     NvimTreeIndentMarker = colors.Fg,
     NvimTreeImageFile = { fg = c.dark_red },
     NvimTreeSymlink = colors.Orange,
-    NvimTreeFolderName = colors.Green,
+    NvimTreeFolderName = colors.Blue,
 }
 hl.plugins.telescope = {
     TelescopeBorder = colors.Orange,
@@ -467,10 +467,10 @@ hl.plugins.telescope = {
 }
 
 hl.plugins.dashboard = {
-    DashboardShortCut = colors.Green,
-    DashboardHeader = colors.Yellow,
+    DashboardShortCut = colors.Yellow,
+    DashboardHeader = colors.Green,
     DashboardCenter = colors.Cyan,
-    DashboardFooter = { fg = c.orange, fmt = "italic"}
+    DashboardFooter = { fg = c.green, fmt = "italic"}
 }
 
 hl.plugins.outline = {

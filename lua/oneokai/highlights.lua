@@ -634,6 +634,11 @@ hl.langs.scala = {
     scalaKeywordModifier = {fg = c.orange, fmt = cfg.code_style.keywords},
 }
 
+hl.langs.python = {
+    pythonClass = colors.Cyan,
+    pythonDecorator = colors.Green,
+}
+
 hl.langs.tex = {
     latexTSInclude = colors.Green,
     latexTSFuncMacro = {fg = c.fg, fmt = cfg.code_style.functions},

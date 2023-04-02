@@ -159,7 +159,7 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
         ["@namespace"] = colors.Blue,
         ["@none"] = colors.Fg,
         ["@number"] = colors.Purple,
-        ["@operator"] = colors.Fg,
+        ["@operator"] = colors.Red,
         ["@parameter"] = colors.Orange,
         ["@parameter.reference"] = colors.Fg,
         ["@property"] = colors.Fg,
@@ -193,7 +193,7 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
         ["@warning"] = colors.Yellow,
         ["@danger"] = colors.Red,
         ["@type"] = colors.Blue,
-        ["@type.builtin"] = colors.Purple,
+        ["@type.builtin"] = colors.Cyan,
         ["@variable"] = {fg = c.fg, fmt = cfg.code_style.variables},
         ["@variable.builtin"] = {fg = c.orange, fmt = cfg.code_style.variables},
     }
@@ -255,7 +255,7 @@ else
         TSWarning = colors.Fg,
         TSDanger = colors.Fg,
         TSType = colors.Blue,
-        TSTypeBuiltin = colors.Purple,
+        TSTypeBuiltin = colors.Cyan,
         TSVariable = {fg = c.fg, fmt = cfg.code_style.variables},
         TSVariableBuiltin = {fg = c.orange, fmt = cfg.code_style.variables},
     }
@@ -451,7 +451,7 @@ hl.plugins.nvim_tree = {
     NvimTreeGitDeleted = colors.Orange,
     NvimTreeSpecialFile = { fg = c.yellow, fmt = "underline" },
     NvimTreeIndentMarker = colors.Fg,
-    NvimTreeImageFile = { fg = c.dark_red },
+    NvimTreeImageFile = { fg = c.red},
     NvimTreeSymlink = colors.Orange,
     NvimTreeFolderName = colors.Blue,
 }

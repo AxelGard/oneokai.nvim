@@ -43,7 +43,41 @@ colorscheme oneokai
 require('oneokai').load()
 ```
 
-**OBS I have not fixed all the shades of dark yet like: darker, cool, deep, warm, warmer, light**
+## styles 
+
+There are some pre defined styles of the oneokai theme
+`dark, darker, cool, deep, warm, warmer`, 
+This are based on the [onedark.nvim#themes](https://github.com/navarasu/onedark.nvim#themes).
+
+You can change it by
+
+```lua
+-- Lua
+require('oneokai').setup {
+    style = 'deep'
+}
+require('oneokai').load()
+```
+```vim
+" Vim
+let g:oneokai_config = {
+    \ 'style': 'deep',
+\}
+colorscheme oneokai
+```
+
+## lualine 
+
+Oneokai has lualine support
+
+```lua
+require('lualine').setup {
+  options = {
+    theme = 'oneokai',
+    -- ... your lualine config
+  }
+}
+```
 
 ---
 * This theme is a fork of [onedark.nvim](https://github.com/navarasu/onedark.nvim).

@@ -456,12 +456,12 @@ hl.plugins.nvim_tree = {
     NvimTreeFolderName = colors.Blue,
 }
 hl.plugins.telescope = {
-    TelescopeBorder = colors.Orange,
-    TelescopePromptBorder = colors.Cyan,
-    TelescopeResultsBorder = colors.Cyan,
-    TelescopePreviewBorder = colors.Cyan,
+    TelescopeBorder = colors.Yellow,
+    TelescopePromptBorder = colors.Orange,
+    TelescopeResultsBorder = colors.Orange,
+    TelescopePreviewBorder = colors.Orange,
     TelescopeMatching = { fg = c.purple, fmt = "bold" },
-    TelescopePromptPrefix = colors.Yellow,
+    TelescopePromptPrefix = colors.Red,
     TelescopeSelection =  { bg =c.bg2 },
     TelescopeSelectionCaret = colors.Yellow
 }
@@ -484,13 +484,13 @@ hl.plugins.navic = {
 }
 
 hl.plugins.ts_rainbow = {
-    rainbowcol1 = colors.Grey,
-    rainbowcol2 = colors.Yellow,
-    rainbowcol3 = colors.Green,
-    rainbowcol4 = colors.Purple,
+    rainbowcol1 = colors.Yellow,
+    rainbowcol2 = colors.Purple,
+    rainbowcol3 = colors.Blue,
+    rainbowcol4 = colors.Green,
     rainbowcol5 = colors.Orange,
-    rainbowcol6 = colors.Yellow,
-    rainbowcol7 = colors.Orange
+    rainbowcol6 = colors.Cyan,
+    rainbowcol7 = colors.Red
 }
 
 hl.plugins.indent_blankline = {

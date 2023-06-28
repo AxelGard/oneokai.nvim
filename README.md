@@ -25,6 +25,8 @@ The default is dark theme.
 
 <img width="100%" alt="Oneokai - dark" src="./doc/oneokai_dark.png">
 
+But I would recommend you use darker.
+
 ## install 
 Install via package manager
 ```vim

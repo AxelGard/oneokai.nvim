@@ -16,7 +16,14 @@ It looked like the thing a wanted, but I noticed that in some cases that the col
 So I decided to fork onedrak.nvim and remap the colors to be more like one monokai. Meaning that I have done a direct color re-mapping from onedark.nvim to One Monokai.
 but the main colors are still from one dark, just a re mapping of colors.
 
-<img src="./doc/oneokai-ex-func-python.png" style="width:100%">
+## themes 
+
+Since oneokai is a fork the same themes as onedark has. 
+there are some example screen shoot in the **[./themes.md](./themes.md)**.
+
+The default is dark theme.
+
+<img width="100%" alt="Oneokai - dark" src="./doc/oneokai_dark.png">
 
 ## install 
 Install via package manager

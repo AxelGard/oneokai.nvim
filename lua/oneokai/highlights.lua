@@ -160,7 +160,7 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
         ["@none"] = colors.Fg,
         ["@number"] = colors.Purple,
         ["@operator"] = colors.Red,
-        ["@parameter"] = colors.LightGrey,
+        ["@parameter"] = colors.Fg,
         ["@parameter.reference"] = colors.LightGrey,
         ["@property"] = colors.Fg,
         ["@punctuation.delimiter"] = colors.LightGrey,

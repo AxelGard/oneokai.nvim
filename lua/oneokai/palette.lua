@@ -223,7 +223,7 @@ return {
 		diff_change = "#1a2a37",
 		diff_text = "#2c485f",
 	},
-	light = {
+	notdark = {
 		black = "#101012",
 		bg0 = "#fbfafb",
 		bg1 = "#e2e1e2",
@@ -256,11 +256,11 @@ return {
 		bg0 = "#fdf6e3",
 		bg1 = "#fbf3d8",
 		bg2 = "#e2dbc2",
-		bg3 = "#c9c2ad",
+		bg3 = "#e2dbc2",
 		bg_d = "#fbf3d8",
 		bg_blue = "#54b0fd",
 		bg_yellow = "#f2cc81",
-		fg = "#93a4c3",
+		fg = "#1a1c1c",
 		purple = "#c75ae8",
 		green = "#8bcd5b",
 		orange = "#dd9046",

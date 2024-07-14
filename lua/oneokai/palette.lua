@@ -58,8 +58,8 @@ return {
 	darkplus = {
 		black = "#0e1013",
 		bg0 = "#1e1f1f",
-		bg1 = "#282c34",
-		bg2 = "#30363f",
+		bg1 = "#292a2a",
+		bg2 = "#111111",
 		bg3 = "#323641",
 		bg_d = "#181b20",
 		bg_blue = "#61afef",

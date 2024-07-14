@@ -22,3 +22,16 @@
 <img width="412" alt="Onedark - deep" src="./doc/oneokai_warmer.png">
 </p>
 
+### darkplus, black 
+
+<p float="left">
+<img width="412" alt="Onedark - cool" src="./doc/oneokai_darkplus.png">
+<img width="412" alt="Onedark - deep" src="./doc/oneokai_black.png">
+</p>
+
+### notdark, paper 
+
+<p float="left">
+<img width="412" alt="Onedark - cool" src="./doc/oneokai_notdark.png">
+<img width="412" alt="Onedark - deep" src="./doc/oneokai_paper.png">
+</p>

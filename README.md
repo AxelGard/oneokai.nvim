@@ -16,17 +16,6 @@ It looked like the thing a wanted, but I noticed that in some cases that the col
 So I decided to fork onedrak.nvim and remap the colors to be more like one monokai. Meaning that I have done a direct color re-mapping from onedark.nvim to One Monokai.
 but the main colors are still from one dark, just a re mapping of colors.
 
-## themes 
-
-Since oneokai is a fork the same themes as onedark has. 
-there are some example screen shoot in the **[./themes.md](./themes.md)**.
-
-The default is dark theme.
-
-<img width="100%" alt="Oneokai - dark" src="./doc/oneokai_dark.png">
-
-But I would recommend you use darker.
-
 ## install 
 Install via package manager
 ```vim
@@ -38,6 +27,52 @@ or
 -- Using Packer
 use 'AxelGard/oneokai.nvim'
 ```
+
+## themes 
+
+Since oneokai is a fork the same themes as onedark has. 
+there are some example screen shoot. 
+
+The default is dark theme.
+
+<img width="100%" alt="Oneokai - dark" src="./doc/oneokai_dark.png">
+
+But I would recommend you use darker, darkplus.
+
+### dark, darker 
+
+<p float="left">
+<img width="412" alt="Onedark - dark" src="./doc/oneokai_dark.png">
+<img width="412" alt="Onedark - darker" src="./doc/oneokai_darker.png">
+</p>
+
+### cool, deep
+
+<p float="left">
+<img width="412" alt="Onedark - cool" src="./doc/oneokai_cool.png">
+<img width="412" alt="Onedark - deep" src="./doc/oneokai_deep.png">
+</p>
+
+### warm, warmer
+
+<p float="left">
+<img width="412" alt="Onedark - cool" src="./doc/oneokai_warm.png">
+<img width="412" alt="Onedark - deep" src="./doc/oneokai_warmer.png">
+</p>
+
+### darkplus, black 
+
+<p float="left">
+<img width="412" alt="Onedark - cool" src="./doc/oneokai_darkplus.png">
+<img width="412" alt="Onedark - deep" src="./doc/oneokai_black.png">
+</p>
+
+### notdark, paper 
+
+<p float="left">
+<img width="412" alt="Onedark - cool" src="./doc/oneokai_notdark.png">
+<img width="412" alt="Onedark - deep" src="./doc/oneokai_paper.png">
+</p>
 
 ## setup and config 
 
@@ -55,8 +90,8 @@ require('oneokai').load()
 ## styles 
 
 There are some pre defined styles of the oneokai theme
-`dark, darker, cool, deep, warm, warmer`, 
-This are based on the [onedark.nvim#themes](https://github.com/navarasu/onedark.nvim#themes).
+`dark, darker, cool, deep, warm, warmer, darkplus, black, notdark, paper`, 
+this are based on the [onedark.nvim#themes](https://github.com/navarasu/onedark.nvim#themes).
 
 You can change it by
 

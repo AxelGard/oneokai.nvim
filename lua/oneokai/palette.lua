@@ -86,9 +86,9 @@ return {
 	black= {
 		black = "#0e1013",
 		bg0 = "#000000",
-		bg1 = "#4C4C4C",
+		bg1 = "#0d0d0d",
 		bg2 = "#252525",
-		bg3 = "#070707",
+		bg3 = "#323232",
 		bg_d = "#191919",
 		bg_blue = "#54b0fd",
 		bg_yellow = "#f2cc81",

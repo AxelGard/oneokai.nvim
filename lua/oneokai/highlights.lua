@@ -227,7 +227,7 @@ else
         TSNumber = colors.Purple,
         TSOperator = colors.Fg,
         TSParameter = colors.Orange,
-        TSParameterReference = colors.Fg,
+        TSParameterReference = colors.Orange,
         TSProperty = colors.Fg,
         TSPunctDelimiter = colors.LightGrey,
         TSPunctBracket = colors.LightGrey,
@@ -447,7 +447,7 @@ hl.plugins.nvim_tree = {
     NvimTreeEndOfBuffer = { fg = cfg.ending_tildes and c.bg2 or c.bg_d, bg = cfg.transparent and c.none or c.bg_d },
     NvimTreeRootFolder = { fg = c.purple, fmt = "bold" },
     NvimTreeGitDirty = colors.Yellow,
-    NvimTreeGitNew = colors.Blue,
+    NvimTreeGitNew = colors.Green,
     NvimTreeGitDeleted = colors.Orange,
     NvimTreeSpecialFile = { fg = c.yellow, fmt = "underline" },
     NvimTreeIndentMarker = colors.Fg,
@@ -560,11 +560,11 @@ hl.plugins.mini = {
 }
 
 hl.langs.c = {
-    cInclude = colors.Green,
+    cInclude = colors.Yellow,
     cStorageClass = colors.Cyan,
     cTypedef = colors.Orange,
     cDefine = colors.Cyan,
-    cTSInclude = colors.Green,
+    cTSInclude = colors.Yellow,
     cTSConstant = colors.Cyan,
     cTSConstMacro = colors.Purple,
     cTSOperator = colors.Red,
@@ -576,6 +576,20 @@ hl.langs.cpp = {
     cppTSConstant = colors.Cyan,
     cppTSConstMacro = colors.Cyan,
     cppTSOperator = colors.Red,
+}
+
+hl.langs.html = {
+    htmlTag = colors.Fg,
+    htmlEndTag = colors.Fg,
+    htmlTagName = colors.Red,
+    htmlArg = colors.Yellow,
+    htmlScriptTag = colors.Red,
+    htmlSpecialTagName = colors.Purple,
+    htmlString = colors.Yellow,
+    htmlValue = colors.Green,
+    htmlComment = { fg = c.grey, fmt = cfg.code_style.comments },
+    htmlBold = { fg = c.none, fmt = "bold" },
+    htmlItalic = { fg = c.none, fmt = "italic" },
 }
 
 hl.langs.markdown = {
@@ -610,9 +624,9 @@ hl.langs.markdown = {
 
 hl.langs.php = {
     phpFunctions = {fg = c.fg, fmt = cfg.code_style.functions},
-    phpMethods = colors.Cyan,
-    phpStructure = colors.Orange,
-    phpOperator = colors.Orange,
+    phpMethods = colors.Green,
+    phpStructure = colors.Red,
+    phpOperator = colors.Red,
     phpMemberSelector = colors.Fg,
     phpVarSelector = {fg = c.purple, fmt = cfg.code_style.variables},
     phpIdentifier = {fg = c.purple, fmt = cfg.code_style.variables},
@@ -620,8 +634,8 @@ hl.langs.php = {
     phpNumber = colors.Purple,
     phpHereDoc = colors.Yellow,
     phpNowDoc = colors.Yellow,
-    phpSCKeyword = {fg = c.orange, fmt = cfg.code_style.keywords},
-    phpFCKeyword = {fg = c.orange, fmt = cfg.code_style.keywords},
+    phpSCKeyword = {fg = c.red, fmt = cfg.code_style.keywords},
+    phpFCKeyword = {fg = c.red, fmt = cfg.code_style.keywords},
     phpRegion = colors.Green
 }
 
@@ -640,11 +654,11 @@ hl.langs.python = {
 }
 
 hl.langs.tex = {
-    latexTSInclude = colors.Green,
+    latexTSInclude = colors.Red,
     latexTSFuncMacro = {fg = c.fg, fmt = cfg.code_style.functions},
     latexTSEnvironment = { fg = c.cyan, fmt = "bold" },
     latexTSEnvironmentName = colors.Yellow,
-    texCmdEnv = colors.Cyan,
+    texCmdEnv = colors.Green,
     texEnvArgName = colors.Yellow,
     latexTSTitle = colors.Yellow,
     latexTSType = colors.Green,

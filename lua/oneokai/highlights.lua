@@ -124,7 +124,7 @@ hl.syntax = {
     Function = {fg = c.green, fmt = cfg.code_style.functions},
     Operator = colors.Red,
     Title = colors.Cyan,
-    Tag = colors.Yellow,
+    Tag = c.fg,
     Delimiter = colors.LightGrey,
     Comment = {fg = c.grey, fmt = cfg.code_style.comments},
     SpecialComment = {fg = c.grey, fmt = cfg.code_style.comments},

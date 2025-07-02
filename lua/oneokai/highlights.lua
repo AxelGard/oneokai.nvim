@@ -101,7 +101,7 @@ hl.syntax = {
     Number = colors.Purple,
     Float = colors.Purple,
     Boolean = colors.Purple,
-    Type = colors.Yellow,
+    Type = colors.Blue,
     Structure = colors.Fg,
     StorageClass = colors.blue,
     Identifier = {fg = c.fg, fmt = cfg.code_style.variables},

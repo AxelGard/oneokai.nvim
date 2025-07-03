@@ -190,6 +190,7 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
         ["@text.diff.add"] = colors.Yellow,
         ["@text.diff.delete"] = colors.Orange,
         ["@note"] = colors.Fg,
+        ["@none"] = colors.Fg,
         ["@warning"] = colors.Yellow,
         ["@danger"] = colors.Red,
         ["@type"] = colors.Blue,

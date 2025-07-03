@@ -197,9 +197,7 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
         ["@type.builtin"] = colors.Cyan,
         ["@variable"] = {fg = c.fg, fmt = cfg.code_style.variables},
         ["@variable.builtin"] = {fg = c.orange, fmt = cfg.code_style.variables},
-        ["@keyword.class.python"] = { fg = c.cyan },
-        ["@import_from.python"] = { fg = c.fg},
-        ["@import_module.python"] = { fg = c.fg },
+        ["@python.class.keyword"] = { fg = c.cyan },
     }
 else
     hl.treesitter = {

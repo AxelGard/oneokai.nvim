@@ -172,7 +172,7 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
         ["@string.escape"] = {fg = c.cyan, fmt = cfg.code_style.strings},
         ["@symbol"] = colors.Fg,
         ["@tag"] = colors.Red,
-        ["@tag.attribute"] = colors.Fg,
+        ["@tag.attribute"] = colors.Green,
         ["@tag.delimiter"] = colors.Fg,
         ["@text"] = colors.Fg,
         ["@text.strong"] = {fg = c.fg, fmt = 'bold'},

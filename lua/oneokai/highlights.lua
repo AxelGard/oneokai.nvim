@@ -295,22 +295,22 @@ hl.plugins.lsp = {
 
     DiagnosticUnderlineError = {
         undercurl = cfg.diagnostics.undercurl,
-        underline = not cfg.diagnostics.undercurl,
+        underline = cfg.diagnostics.undercurl,
         sp = c.red,
     },
     DiagnosticUnderlineHint = {
         undercurl = cfg.diagnostics.undercurl,
-        underline = not cfg.diagnostics.undercurl,
+        underline = cfg.diagnostics.undercurl,
         sp = c.green,
     },
     DiagnosticUnderlineInfo = {
         undercurl = cfg.diagnostics.undercurl,
-        underline = not cfg.diagnostics.undercurl,
+        underline = cfg.diagnostics.undercurl,
         sp = c.blue,
     },
     DiagnosticUnderlineWarn = {
         undercurl = cfg.diagnostics.undercurl,
-        underline = not cfg.diagnostics.undercurl,
+        underline = cfg.diagnostics.undercurl,
         sp = c.yellow,
     },
 

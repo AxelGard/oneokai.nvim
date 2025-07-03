@@ -284,8 +284,9 @@ hl.plugins.lsp = {
     DiagnosticInfo = {fg = c.blue},
     DiagnosticWarn = {fg = c.yellow},
 
-    DiagnosticVirtualTextError = { bg = cfg.diagnostics.background and util.darken(diagnostics_error_color, 0.1, c.bg0) or c.none,
-                                   fg = diagnostics_error_color },
+    --DiagnosticVirtualTextError = { bg = cfg.diagnostics.background and util.darken(diagnostics_error_color, 0.1, c.bg0) or c.none,
+    --                               fg = diagnostics_error_color },
+    DiagnosticVirtualTextError = { fg = c.fg },
     DiagnosticVirtualTextWarn = { bg = cfg.diagnostics.background and util.darken(diagnostics_warn_color, 0.1, c.bg0) or c.none,
                                   fg = diagnostics_warn_color },
     DiagnosticVirtualTextInfo = { bg = cfg.diagnostics.background and util.darken(diagnostics_info_color, 0.1, c.bg0) or c.none,
@@ -293,26 +294,10 @@ hl.plugins.lsp = {
     DiagnosticVirtualTextHint = { bg = cfg.diagnostics.background and util.darken(diagnostics_hint_color, 0.1, c.bg0) or c.none,
                                   fg = diagnostics_hint_color },
 
-    DiagnosticUnderlineError = {
-        undercurl = cfg.diagnostics.undercurl,
-        underline = cfg.diagnostics.undercurl,
-        sp = c.red,
-    },
-    DiagnosticUnderlineHint = {
-        undercurl = cfg.diagnostics.undercurl,
-        underline = cfg.diagnostics.undercurl,
-        sp = c.green,
-    },
-    DiagnosticUnderlineInfo = {
-        undercurl = cfg.diagnostics.undercurl,
-        underline = cfg.diagnostics.undercurl,
-        sp = c.blue,
-    },
-    DiagnosticUnderlineWarn = {
-        undercurl = cfg.diagnostics.undercurl,
-        underline = cfg.diagnostics.undercurl,
-        sp = c.yellow,
-    },
+    DiagnosticUnderlineError= {fmt = cfg.diagnostics.undercurl and "undercurl" or "underline", sp = c.red},
+    DiagnosticUnderlineHint = {fmt = cfg.diagnostics.undercurl and "undercurl" or "underline", sp = c.orange},
+    DiagnosticUnderlineInfo = {fmt = cfg.diagnostics.undercurl and "undercurl" or "underline", sp = c.green},
+    DiagnosticUnderlineWarn = {fmt = cfg.diagnostics.undercurl and "undercurl" or "underline", sp = c.yellow},
 
     LspReferenceText = { bg = c.bg2 },
     LspReferenceWrite = { bg = c.bg2 },

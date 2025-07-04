@@ -5,6 +5,12 @@ local util = require("oneokai.util")
 local M = {}
 local hl = { langs = {}, plugins = {} }
 
+vim.api.nvim_set_hl(0, "DiagnosticUnderlineError", { underline = true, sp = "#FF0000" })
+vim.api.nvim_set_hl(0, "DiagnosticUnderlineWarn",  { underline = true, sp = "#FFA500" })
+vim.api.nvim_set_hl(0, "DiagnosticUnderlineInfo",  { underline = true, sp = "#00BFFF" })
+vim.api.nvim_set_hl(0, "DiagnosticUnderlineHint",  { underline = true, sp = "#32CD32" })
+
+
 local function vim_highlights(highlights)
     for group_name, group_settings in pairs(highlights) do
         vim.api.nvim_command(string.format("highlight %s guifg=%s guibg=%s guisp=%s gui=%s", group_name,
@@ -204,7 +210,7 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
         ["@keyword.type"] = colors.Cyan,
 
         ["@lsp.typemod.operator.userDefined"] = colors.Green,
-        ["DiagnosticUnderlineError"] = { sp = c.red, fmt="underline"},
+        --["DiagnosticUnderlineError"] = { sp = c.red, fmt="underline"},
 
     }
 else

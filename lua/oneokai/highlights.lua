@@ -193,13 +193,14 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
         ["@warning"] = colors.Yellow,
         ["@danger"] = colors.Red,
         ["@type"] = colors.Blue,
+        --["@type"] = colors.Cyan,
         ["@type.builtin"] = colors.Cyan,
         ["@variable"] = {fg = c.fg, fmt = cfg.code_style.variables},
         ["@variable.parameter"] = colors.Orange, 
         ["@variable.parameter.bash"] = colors.Fg, 
         ["@variable.parameter.reference"] = colors.Orange, 
         ["@variable.builtin"] = {fg = c.orange, fmt = cfg.code_style.variables},
-        ["@lsp.typemod.class.declaration"] = colors.Cyan,
+        --["@lsp.typemod.class.declaration"] = colors.Cyan,
         ["@keyword.type"] = colors.Cyan,
 
     }

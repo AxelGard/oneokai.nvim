@@ -205,7 +205,6 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
         ["@keyword.type"] = colors.Cyan,
 
         ["@lsp.typemod.operator.userDefined"] = colors.Green,
-        --["DiagnosticUnderlineError"] = { sp = c.red, fmt="underline"},
 
     }
 else
@@ -289,9 +288,8 @@ hl.plugins.lsp = {
     DiagnosticInfo = { fg = c.blue },
     DiagnosticWarn = { fg = c.yellow },
 
-    --DiagnosticVirtualTextError = { bg = cfg.diagnostics.background and util.darken(diagnostics_error_color, 0.1, c.bg0) or c.none,
-    --                               fg = diagnostics_error_color },
-    DiagnosticVirtualTextError = { fg = c.fg },
+    DiagnosticVirtualTextError = { bg = cfg.diagnostics.background and util.darken(diagnostics_error_color, 0.1, c.bg0) or c.none,
+    fg = diagnostics_error_color },
     DiagnosticVirtualTextWarn = {
         bg = cfg.diagnostics.background and util.darken(diagnostics_warn_color, 0.1, c.bg0) or c.none,
         fg = diagnostics_warn_color
@@ -305,11 +303,10 @@ hl.plugins.lsp = {
         fg = diagnostics_hint_color
     },
 
-    --DiagnosticUnderlineError = {sp = c.red, fmt = "underline" },
-    DiagnosticUnderlineError= { fmt = "undercurl", sp = c.red},
-    DiagnosticUnderlineHint = { fmt = cfg.diagnostics.undercurl and "undercurl" or "underline", sp = c.orange },
-    DiagnosticUnderlineInfo = { fmt = cfg.diagnostics.undercurl and "undercurl" or "underline", sp = c.green },
-    DiagnosticUnderlineWarn = { fmt = cfg.diagnostics.undercurl and "undercurl" or "underline", sp = c.yellow },
+    DiagnosticUnderlineError = { fmt = cfg.diagnostics.undercurl and "undercurl" or "underline", sp = c.red },
+    DiagnosticUnderlineHint =  { fmt = cfg.diagnostics.undercurl and "undercurl" or "underline", sp = c.orange },
+    DiagnosticUnderlineInfo =  { fmt = cfg.diagnostics.undercurl and "undercurl" or "underline", sp = c.blue},
+    DiagnosticUnderlineWarn =  { fmt = cfg.diagnostics.undercurl and "undercurl" or "underline", sp = c.yellow },
 
     LspReferenceText = { bg = c.bg2 },
     LspReferenceWrite = { bg = c.bg2 },

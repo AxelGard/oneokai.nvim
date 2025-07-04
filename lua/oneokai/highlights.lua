@@ -204,6 +204,7 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
         ["@keyword.type"] = colors.Cyan,
 
         ["@lsp.typemod.operator.userDefined"] = colors.Green,
+        ["DiagnosticUnderlineError"] = {sp = c.red},
 
     }
 else

@@ -204,7 +204,6 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
         ["@keyword.type"] = colors.Cyan,
 
         ["@lsp.typemod.operator.userDefined"] = colors.Green,
-        ["DiagnosticUnderlineError"] = {sp = c.red},
 
     }
 else
@@ -304,7 +303,7 @@ hl.plugins.lsp = {
         fg = diagnostics_hint_color
     },
 
-    DiagnosticUnderlineError = { fg = c.fg, sp = c.red, fmt = cfg.diagnostics.undercurl and "undercurl" or "underline" },
+    DiagnosticUnderlineError = {sp = c.red, fmt = "underline" },
     DiagnosticUnderlineHint = { fmt = cfg.diagnostics.undercurl and "undercurl" or "underline", sp = c.orange },
     DiagnosticUnderlineInfo = { fmt = cfg.diagnostics.undercurl and "undercurl" or "underline", sp = c.green },
     DiagnosticUnderlineWarn = { fmt = cfg.diagnostics.undercurl and "undercurl" or "underline", sp = c.yellow },

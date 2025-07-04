@@ -203,6 +203,8 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
         --["@lsp.typemod.class.declaration"] = colors.Cyan,
         ["@keyword.type"] = colors.Cyan,
 
+        ["@lsp.typemod.operator.userDefined"] = colors.LightGrey,
+
     }
 else
     hl.treesitter = {

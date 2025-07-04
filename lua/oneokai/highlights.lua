@@ -142,7 +142,7 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
         ["@constant"] = colors.Purple,
         ["@constant.builtin"] = colors.Purple,
         ["@constant.macro"] = colors.Purple,
-        ["@constructor"] = {fg = c.green, fmt = "bold"},
+        ["@constructor"] = {fg = c.blue, fmt = "bold"},
         ["@error"] = colors.Red,
         ["@exception"] = colors.Red,
         ["@field"] = colors.Fg,

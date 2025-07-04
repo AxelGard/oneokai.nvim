@@ -192,7 +192,7 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
         ["@note"] = colors.Fg,
         ["@warning"] = colors.Yellow,
         ["@danger"] = colors.Red,
-        ["@type"] = colors.Cyan,
+        ["@type"] = colors.Blue,
         ["@type.builtin"] = colors.Cyan,
         ["@variable"] = {fg = c.fg, fmt = cfg.code_style.variables},
         ["@variable.parameter"] = colors.Orange, 

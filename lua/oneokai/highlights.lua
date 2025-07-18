@@ -202,7 +202,8 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
         ["@variable.parameter.reference"] = colors.Orange,
         ["@variable.builtin"] = { fg = c.orange, fmt = cfg.code_style.variables },
         --["@lsp.typemod.class.declaration"] = colors.Cyan,
-        ["@keyword.type"] = colors.Cyan,
+        --["@keyword.type"] = colors.Cyan,
+        ["@keyword.type"] = colors.Red,
 
         ["@lsp.typemod.operator.userDefined"] = colors.Green,
 

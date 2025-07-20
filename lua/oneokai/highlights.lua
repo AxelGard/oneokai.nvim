@@ -174,6 +174,7 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
         ["@symbol"] = colors.Fg,
         ["@tag"] = colors.Red,
         ["@tag.attribute"] = colors.Green,
+        ["@tag.builtin"] = colors.Blue,
         ["@tag.delimiter"] = colors.Fg,
         ["@text"] = colors.Fg,
         ["@text.strong"] = { fg = c.fg, fmt = 'bold' },

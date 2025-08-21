@@ -98,7 +98,7 @@ hl.common = {
 
 hl.syntax = {
     String = { fg = c.yellow, fmt = cfg.code_style.strings },
-    Character = colors.Purple,
+    Character = colors.Yellow,
     Number = colors.Purple,
     Float = colors.Purple,
     Boolean = colors.Purple,

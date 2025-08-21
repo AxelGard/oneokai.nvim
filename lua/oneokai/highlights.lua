@@ -137,7 +137,7 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
         ["@annotation"] = colors.Fg,
         ["@attribute"] = colors.Fg,
         ["@boolean"] = colors.Purple,
-        ["@character"] = colors.Purple,
+        ["@character"] = colors.Yellow,
         ["@comment"] = { fg = c.grey, fmt = cfg.code_style.comments },
         ["@conditional"] = { fg = c.red, fmt = cfg.code_style.keywords },
         ["@constant"] = colors.Purple,

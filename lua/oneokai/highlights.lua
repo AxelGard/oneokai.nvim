@@ -142,7 +142,7 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
         ["@conditional"] = { fg = c.red, fmt = cfg.code_style.keywords },
         ["@constant"] = colors.Purple,
         ["@constant.builtin"] = colors.Purple,
-        ["@constant.macro"] = colors.Cyan,
+        ["@constant.macro"] = colors.Purple,
         ["@constructor"] = { fg = c.green, fmt = "bold" },
         ["@error"] = colors.Red,
         ["@exception"] = colors.Red,

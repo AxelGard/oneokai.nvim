@@ -209,6 +209,8 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
 
         ["@lsp.typemod.operator.userDefined"] = colors.Green,
 
+        ["@markup.raw.tsx"] = colors.Fg,
+        ["@markup.heading.1.tsx"] = colors.Fg,
     }
 else
     hl.treesitter = {

@@ -220,7 +220,6 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
 
         -- C# / dotnet 
         ["@attribute.c_sharp"] = colors.Orange,
-        ["@module.c_sharp"] = colors.Blue,
 
 
     }

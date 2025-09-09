@@ -171,6 +171,7 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
         ["@string"] = { fg = c.yellow, fmt = cfg.code_style.strings },
         ["@string.regex"] = { fg = c.purple, fmt = cfg.code_style.strings },
         ["@string.escape"] = { fg = c.cyan, fmt = cfg.code_style.strings },
+        ["@string.special.url"] = { fg = c.blue, fmt = 'underline'},
         ["@symbol"] = colors.Fg,
         ["@tag"] = colors.Red,
         ["@tag.attribute"] = colors.Green,

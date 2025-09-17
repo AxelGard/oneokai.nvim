@@ -307,6 +307,35 @@ return {
 		diff_change = "#1c3448",
 		diff_text = "#2c5372",
     },
+    nord = {
+        black = "#2E3440",         -- Nord0
+        bg0 = "#2E3440",           -- Nord0
+        bg1 = "#3B4252",           -- Nord1
+        bg2 = "#434C5E",           -- Nord2
+        bg3 = "#4C566A",           -- Nord3
+        bg_d = "#3B4252",          -- Nord1
+        bg_blue = "#81A1C1",       -- Nord9
+        bg_yellow = "#EBCB8B",     -- Nord13
+        fg = "#D8DEE9",            -- Nord4
+        purple = "#B48EAD",        -- Nord15
+        green = "#A3BE8C",         -- Nord14
+        orange = "#D08770",        -- Nord12
+        blue = "#5E81AC",          -- Nord10
+        yellow = "#EBCB8B",        -- Nord13
+        cyan = "#8FBCBB",          -- Nord7
+        red = "#BF616A",           -- Nord11
+        grey = "#4C566A",          -- Nord3
+        light_grey = "#D8DEE9",    -- Nord4
+        dark_cyan = "#88C0D0",     -- Nord8
+        dark_red = "#BF616A",      -- Nord11
+        dark_yellow = "#D08770",   -- Nord12
+        dark_purple = "#B48EAD",   -- Nord15
+        diff_add = "#434C5E",      -- Nord2
+        diff_delete = "#3B4252",   -- Nord1
+        diff_change = "#4C566A",   -- Nord3
+        diff_text = "#5E81AC",     -- Nord10
+    }
+
 	debug = {
 		black = "#181a1f",
 		bg0 = "#282c34",

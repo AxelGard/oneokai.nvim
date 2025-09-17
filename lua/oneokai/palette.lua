@@ -291,7 +291,7 @@ return {
 		fg = "#fffefe", -- done
 		purple = "#b394ba", -- done
 		green = "#b4bc68", -- done
-		orange = "#d65f01", -- done 
+		orange = "#cd7f65", -- done 
 		blue = "#81a2be", -- done
 		yellow = "#edc273", -- done
 		cyan = "#8bbeb6", -- done

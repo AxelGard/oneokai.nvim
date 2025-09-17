@@ -336,6 +336,34 @@ return {
         diff_text = "#5E81AC",     -- Nord10
     },
 
+    everforest = {
+        black        = "#1e2326",
+        bg0          = "#2b3339", -- main background
+        bg1          = "#323c41", -- lighter background
+        bg2          = "#3a454a", -- selection background
+        bg3          = "#445055", -- popup background
+        bg_d         = "#1e2326", -- darker background
+        bg_blue      = "#7fbbb3", -- used for visual selection or diff
+        bg_yellow    = "#dbbc7f", -- used for diagnostics or highlights
+        fg           = "#d3c6aa", -- main foreground
+        purple       = "#d699b6",
+        green        = "#a7c080",
+        orange       = "#e69875",
+        blue         = "#7fbbb3",
+        yellow       = "#dbbc7f",
+        cyan         = "#83c092",
+        red          = "#e67e80",
+        grey         = "#859289",
+        light_grey   = "#9da9a0",
+        dark_cyan    = "#4d6c6c",
+        dark_red     = "#a35f5f",
+        dark_yellow  = "#bfa76f",
+        dark_purple  = "#a988b0",
+        diff_add     = "#323d3b",
+        diff_delete  = "#3c2e2e",
+        diff_change  = "#273941",
+        diff_text    = "#4c6a6d",
+    },
 	debug = {
 		black = "#181a1f",
 		bg0 = "#282c34",

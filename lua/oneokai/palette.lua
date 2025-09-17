@@ -279,6 +279,34 @@ return {
 		diff_change = "#102b40",
 		diff_text = "#1c4a6e",
 	},
+    mat = {
+		black = "#1f2225", -- done
+		bg0 = "#282d35", -- done
+		bg1 = "#31353f",
+		bg2 = "#393f4a",
+		bg3 = "#3b3f4c",
+		bg_d = "#21252b",
+		bg_blue = "#73b8f1",
+		bg_yellow = "#ebd09c",
+		fg = "#fffefe", -- done
+		purple = "#b394ba", -- done
+		green = "#b4bc68", -- done
+		orange = "#c34c23", -- done 
+		blue = "#81a2be", -- done
+		yellow = "#edc273", -- done
+		cyan = "#8bbeb6", -- done
+		red = "#9d5355", -- done
+		grey = "#606160", -- done
+		light_grey = "#c4c8c7",
+		dark_cyan = "#2b6f77",
+		dark_red = "#993939",
+		dark_yellow = "#93691d",
+		dark_purple = "#8a3fa0",
+		diff_add = "#31392b",
+		diff_delete = "#382b2c",
+		diff_change = "#1c3448",
+		diff_text = "#2c5372",
+    },
 	debug = {
 		black = "#181a1f",
 		bg0 = "#282c34",

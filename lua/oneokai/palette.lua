@@ -334,7 +334,7 @@ return {
         diff_delete = "#3B4252",   -- Nord1
         diff_change = "#4C566A",   -- Nord3
         diff_text = "#5E81AC",     -- Nord10
-    }
+    },
 
 	debug = {
 		black = "#181a1f",

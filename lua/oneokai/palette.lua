@@ -364,6 +364,34 @@ return {
         diff_change  = "#273941",
         diff_text    = "#4c6a6d",
     },
+    catppuccin_macchiato = {
+        black        = "#181926",
+        bg0          = "#24273a", -- main background
+        bg1          = "#1e2030", -- slightly darker
+        bg2          = "#363a4f", -- selection background
+        bg3          = "#494d64", -- popup background
+        bg_d         = "#1e1e2e", -- even darker background
+        bg_blue      = "#8aadf4", -- used for visual selection or diff
+        bg_yellow    = "#eed49f", -- used for diagnostics or highlights
+        fg           = "#cad3f5", -- main foreground
+        purple       = "#c6a0f6",
+        green        = "#a6da95",
+        orange       = "#f5a97f",
+        blue         = "#8aadf4",
+        yellow       = "#eed49f",
+        cyan         = "#8bd5ca",
+        red          = "#ed8796",
+        grey         = "#6e738d",
+        light_grey   = "#a5adcb",
+        dark_cyan    = "#5b6078",
+        dark_red     = "#b2555b",
+        dark_yellow  = "#bfa76f",
+        dark_purple  = "#a28fd0",
+        diff_add     = "#273849",
+        diff_delete  = "#3f2d3d",
+        diff_change  = "#2b3b51",
+        diff_text    = "#4e6e8e",
+    },
 	debug = {
 		black = "#181a1f",
 		bg0 = "#282c34",

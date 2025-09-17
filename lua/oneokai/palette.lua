@@ -420,6 +420,35 @@ return {
         diff_change  = "#2b3b51",
         diff_text    = "#4c6a8e",
     },
+    gruvbox_material = {
+        black        = "#1d2021",
+        bg0          = "#282828", -- main background
+        bg1          = "#32302f", -- slightly darker
+        bg2          = "#3c3836", -- selection background
+        bg3          = "#504945", -- popup background
+        bg_d         = "#1b1b1b", -- even darker background
+        bg_blue      = "#458588", -- used for visual selection or diff
+        bg_yellow    = "#d79921", -- used for diagnostics or highlights
+        fg           = "#d4be98", -- main foreground
+        purple       = "#d3869b",
+        green        = "#a9b665",
+        orange       = "#e78a4e",
+        blue         = "#7daea3",
+        yellow       = "#d8a657",
+        cyan         = "#89b482",
+        red          = "#ea6962",
+        grey         = "#928374",
+        light_grey   = "#a89984",
+        dark_cyan    = "#427b58",
+        dark_red     = "#9d0006",
+        dark_yellow  = "#b57614",
+        dark_purple  = "#8f3f71",
+        diff_add     = "#32361a",
+        diff_delete  = "#3c1f1e",
+        diff_change  = "#0e363e",
+        diff_text    = "#4f6752",
+    },
+
 	debug = {
 		black = "#181a1f",
 		bg0 = "#282c34",

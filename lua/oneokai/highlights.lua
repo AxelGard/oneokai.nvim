@@ -218,6 +218,8 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
         ["@markup.link"] = colors.Blue,
         ["@markup.raw.markdownBold"] = {fg = c.fg, fmt = "bold"},
 
+        -- kotlin
+        ["@attribute.kotlin"] = colors.Cyan,
 
         -- C# / dotnet 
         ["@attribute.c_sharp"] = colors.Orange,

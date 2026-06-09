@@ -16,10 +16,13 @@ function M.colorscheme()
     if vim.fn.exists("syntax_on") then vim.cmd("syntax reset") end
     vim.o.termguicolors = true
     vim.g.colors_name = "oneokai"
-    if vim.o.background == 'light' then
-        M.set_options('style', 'paper')
-    elseif vim.g.oneokai_config.style == 'paper' then
-        M.set_options('style', 'dark')
+    -- The configured style wins; keep &background in sync with it.
+    -- (Setting 'background' re-sources the colorscheme, so only assign on a
+    -- real change to avoid an infinite reload loop.)
+    local light_styles = { paper = true, notdark = true }
+    local want = light_styles[vim.g.oneokai_config.style] and 'light' or 'dark'
+    if vim.o.background ~= want then
+        vim.o.background = want
     end
     require('oneokai.highlights').setup()
     require('oneokai.terminal').setup()

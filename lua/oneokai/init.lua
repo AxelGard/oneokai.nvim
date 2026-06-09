@@ -17,8 +17,8 @@ function M.colorscheme()
     vim.o.termguicolors = true
     vim.g.colors_name = "oneokai"
     if vim.o.background == 'light' then
-        M.set_options('style', 'light')
-    elseif vim.g.oneokai_config.style == 'light' then
+        M.set_options('style', 'paper')
+    elseif vim.g.oneokai_config.style == 'paper' then
         M.set_options('style', 'dark')
     end
     require('oneokai.highlights').setup()

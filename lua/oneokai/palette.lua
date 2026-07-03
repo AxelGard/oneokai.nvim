@@ -449,6 +449,35 @@ return {
         diff_text    = "#4f6752",
     },
 
+    island_dark = {
+        black        = "#0f1011", -- darkest chrome
+        bg0          = "#191a1c", -- editor background (islands editor bg)
+        bg1          = "#1f2022", -- slightly lighter (island panel)
+        bg2          = "#2a2b2e", -- selection background
+        bg3          = "#313236", -- popup background
+        bg_d         = "#141517", -- darker background / gutter
+        bg_blue      = "#56a8f5", -- used for visual selection or diff
+        bg_yellow    = "#d7cf8a", -- used for diagnostics or highlights
+        fg           = "#bcbec4", -- main foreground
+        purple       = "#c77dbb", -- fields / constants
+        green        = "#6aab73", -- strings
+        orange       = "#cf8e6d", -- keywords
+        blue         = "#56a8f5", -- functions / methods
+        yellow       = "#b3ae60", -- annotations / static
+        cyan         = "#2aacb8", -- numbers
+        red          = "#f75464", -- errors
+        grey         = "#7a7e85", -- comments
+        light_grey   = "#9da0a8",
+        dark_cyan    = "#16baac", -- type parameters / generics
+        dark_red     = "#a53b48",
+        dark_yellow  = "#8a7d2f",
+        dark_purple  = "#9a5590",
+        diff_add     = "#26331f",
+        diff_delete  = "#37262a",
+        diff_change  = "#16293a",
+        diff_text    = "#264a63",
+    },
+
 	debug = {
 		black = "#181a1f",
 		bg0 = "#282c34",

@@ -1,6 +1,6 @@
 local M = {}
 
-M.styles_list = { 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer', 'light' }
+M.styles_list = { 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer', 'light', 'island_dark' }
 
 M.config = {
     -- Main options --

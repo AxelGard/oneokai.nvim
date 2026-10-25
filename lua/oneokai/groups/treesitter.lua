@@ -48,7 +48,6 @@ return function(c, cfg, fg)
         ["@tag.attribute"] = fg.green,
         ["@tag.builtin"] = fg.blue,
         ["@tag.delimiter"] = fg.fg,
-        ["@tag.builtin.tsx"] = fg.red,
         ["@type"] = { link = "Type" },
         --["@type"] = fg.cyan,
         ["@type.builtin"] = fg.cyan,
@@ -56,7 +55,6 @@ return function(c, cfg, fg)
         ["@variable.builtin"] = { fg = c.orange, fmt = cfg.code_style.variables },
         ["@variable.member"] = { link = "Identifier" },
         ["@variable.parameter"] = fg.orange,
-        ["@variable.parameter.bash"] = fg.fg,
         --["@lsp.typemod.class.declaration"] = fg.cyan,
         --["@keyword.type"] = fg.cyan,
 
@@ -73,12 +71,5 @@ return function(c, cfg, fg)
         ["@markup.link.url"] = { fg = c.cyan, fmt = 'underline' },
         ["@markup.math"] = fg.fg,
         ["@markup.environment"] = fg.fg,
-        ["@markup.raw.tsx"] = fg.fg,
-        ["@markup.heading.1.tsx"] = fg.fg,
-
-        -- C# / dotnet
-        ["@attribute.c_sharp"] = fg.orange,
-
-        ["@property.json"] = fg.cyan,
     }
 end

@@ -3,6 +3,6 @@ return function(c, cfg, fg)
         WhichKey = fg.orange,
         WhichKeyDesc = fg.green,
         WhichKeyGroup = fg.purple,
-        WhichKeySeperator = fg.yellow
+        WhichKeySeparator = fg.yellow,
     }
 end

@@ -1,5 +1,11 @@
 local M = {}
 
+---'light' for the light styles (see default.lua), 'dark' for everything else
+local function background_for(style)
+    local default = require("oneokai.default")
+    return default.light_styles[default.resolve_style(style)] and 'light' or 'dark'
+end
+
 ---Change oneokai option (vim.g.oneokai_config.option)
 ---It can't be changed directly by modifing that field due to a Neovim lua bug with global variables (oneokai_config is a global variable)
 ---@param opt string: option name
@@ -19,8 +25,7 @@ function M.colorscheme()
     -- The configured style wins; keep &background in sync with it.
     -- (Setting 'background' re-sources the colorscheme, so only assign on a
     -- real change to avoid an infinite reload loop.)
-    local light_styles = { paper = true, notdark = true }
-    local want = light_styles[vim.g.oneokai_config.style] and 'light' or 'dark'
+    local want = background_for(vim.g.oneokai_config.style)
     if vim.o.background ~= want then
         vim.o.background = want
     end
@@ -34,12 +39,13 @@ function M.toggle()
     if index > #vim.g.oneokai_config.toggle_style_list then index = 1 end
     M.set_options('style', vim.g.oneokai_config.toggle_style_list[index])
     M.set_options('toggle_style_index', index)
-    if vim.g.oneokai_config.style == 'light' then
-        vim.o.background = 'light'
+    -- changing 'background' reloads the colorscheme by itself, so only load it here when it doesn't change
+    local want = background_for(vim.g.oneokai_config.style)
+    if vim.o.background ~= want then
+        vim.o.background = want
     else
-        vim.o.background = 'dark'
+        vim.api.nvim_command('colorscheme oneokai')
     end
-    vim.api.nvim_command('colorscheme oneokai')
 end
 
 ---Setup oneokai.nvim options, without applying colorscheme

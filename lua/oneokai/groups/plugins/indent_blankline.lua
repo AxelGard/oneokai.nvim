@@ -6,10 +6,10 @@ return function(c, cfg, fg)
         IndentBlanklineIndent4 = fg.light_grey,
         IndentBlanklineIndent5 = fg.orange,
         IndentBlanklineIndent6 = fg.orange,
-        IndentBlanklineChar = { fg = c.bg1, gui = "nocombine" },
-        IndentBlanklineContext = { fg = c.purple, bg = c.bg3, bold = true },
-        IndentBlanklineContextChar = { fg = c.bg1, gui = "nocombine" },
-        IndentBlanklineContextStart = { sp = c.bg1, gui = "underline" },
-        IndentBlanklineContextSpaceChar = { gui = "nocombine" },
+        IndentBlanklineChar = { fg = c.bg1, fmt = "nocombine" },
+        IndentBlanklineContext = { fg = c.purple, bg = c.bg3, fmt = "bold" },
+        IndentBlanklineContextChar = { fg = c.bg1, fmt = "nocombine" },
+        IndentBlanklineContextStart = { sp = c.bg1, fmt = "underline" },
+        IndentBlanklineContextSpaceChar = { fmt = "nocombine" },
     }
 end

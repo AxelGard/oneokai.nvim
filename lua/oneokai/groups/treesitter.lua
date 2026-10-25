@@ -73,7 +73,6 @@ return function(c, cfg, fg)
         ["@markup.link.url"] = { fg = c.cyan, fmt = 'underline' },
         ["@markup.math"] = fg.fg,
         ["@markup.environment"] = fg.fg,
-        ["@markup.raw.markdownBold"] = { fg = c.fg, fmt = "bold" },
         ["@markup.raw.tsx"] = fg.fg,
         ["@markup.heading.1.tsx"] = fg.fg,
 

@@ -6,7 +6,17 @@ local M = {}
 -- Convert a group's settings into an nvim_set_hl spec.
 -- Settings are { fg, bg, sp, fmt } where fmt is a comma separated list ("bold,italic"),
 -- or { link = "OtherGroup" } to link to another group.
-local function to_hl_spec(settings)
+local known_keys = { fg = true, bg = true, sp = true, fmt = true, link = true }
+
+local function to_hl_spec(group_name, settings)
+    for key in pairs(settings) do
+        if not known_keys[key] then
+            vim.schedule(function()
+                vim.notify(string.format('oneokai.nvim: %s has unknown key "%s", use fg, bg, sp, fmt or link',
+                    group_name, key), vim.log.levels.WARN, { title = "oneokai.nvim" })
+            end)
+        end
+    end
     if settings.link then return { link = settings.link } end
     local spec = { fg = settings.fg, bg = settings.bg, sp = settings.sp }
     if settings.fmt and settings.fmt ~= "none" then
@@ -17,7 +27,7 @@ end
 
 local function vim_highlights(highlights)
     for group_name, group_settings in pairs(highlights) do
-        vim.api.nvim_set_hl(0, group_name, to_hl_spec(group_settings))
+        vim.api.nvim_set_hl(0, group_name, to_hl_spec(group_name, group_settings))
     end
 end
 
@@ -38,13 +48,11 @@ function M.setup()
     end
 
     for group_name, group_settings in pairs(cfg.highlights) do
-        local user = {
-            fg = replace_color(group_settings.fg),
-            bg = replace_color(group_settings.bg),
-            sp = replace_color(group_settings.sp),
-            fmt = group_settings.fmt,
-            link = group_settings.link,
-        }
+        -- copy every key, so unknown ones (e.g. `bold = true`) still get warned about
+        local user = vim.tbl_extend("force", {}, group_settings)
+        user.fg = replace_color(user.fg)
+        user.bg = replace_color(user.bg)
+        user.sp = replace_color(user.sp)
         -- only the given attributes are overridden, the rest are kept from the theme
         local base = groups[group_name] or {}
         if base.link and not user.link then base = {} end

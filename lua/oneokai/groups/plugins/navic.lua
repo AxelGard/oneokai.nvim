@@ -1,4 +1,4 @@
-return function(c, cfg, colors)
+return function(c, cfg, fg)
     local groups = {
         NavicText = { fg = c.fg },
         NavicSeparator = { fg = c.light_grey },

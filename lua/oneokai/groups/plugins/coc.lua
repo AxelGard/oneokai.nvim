@@ -1,4 +1,4 @@
-return function(c, cfg, colors)
+return function(c, cfg, fg)
     return {
         CocErrorSign = { link = "DiagnosticError" },
         CocHintSign = { link = "DiagnosticHint" },

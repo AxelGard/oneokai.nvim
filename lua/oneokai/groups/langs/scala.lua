@@ -1,10 +1,10 @@
-return function(c, cfg, colors)
+return function(c, cfg, fg)
     return {
-        scalaNameDefinition = colors.Fg,
-        scalaInterpolationBoundary = colors.Orange,
-        scalaInterpolation = colors.Orange,
-        scalaTypeOperator = colors.Orange,
-        scalaOperator = colors.Orange,
+        scalaNameDefinition = fg.fg,
+        scalaInterpolationBoundary = fg.orange,
+        scalaInterpolation = fg.orange,
+        scalaTypeOperator = fg.orange,
+        scalaOperator = fg.orange,
         scalaKeywordModifier = { fg = c.orange, fmt = cfg.code_style.keywords },
     }
 end

@@ -1,8 +1,8 @@
-return function(c, cfg, colors)
+return function(c, cfg, fg)
     return {
-        WhichKey = colors.Orange,
-        WhichKeyDesc = colors.Green,
-        WhichKeyGroup = colors.Purple,
-        WhichKeySeperator = colors.Yellow
+        WhichKey = fg.orange,
+        WhichKeyDesc = fg.green,
+        WhichKeyGroup = fg.purple,
+        WhichKeySeperator = fg.yellow
     }
 end

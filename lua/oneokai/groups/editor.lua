@@ -1,4 +1,4 @@
-return function(c, cfg, colors)
+return function(c, cfg, fg)
     return {
         Normal = { fg = c.fg, bg = cfg.transparent and c.none or c.bg0 },
         Terminal = { fg = c.fg, bg = cfg.transparent and c.none or c.bg0 },
@@ -22,12 +22,12 @@ return function(c, cfg, colors)
         DiffChange = { fg = c.none, bg = c.diff_change },
         DiffDelete = { fg = c.none, bg = c.diff_delete },
         DiffText = { fg = c.none, bg = c.diff_text },
-        DiffAdded = colors.Yellow,
-        DiffRemoved = colors.Red,
-        DiffFile = colors.Cyan,
-        DiffIndexLine = colors.Grey,
+        DiffAdded = fg.yellow,
+        DiffRemoved = fg.red,
+        DiffFile = fg.cyan,
+        DiffIndexLine = fg.grey,
         Directory = { fg = c.green },
-        ErrorMsg = { fg = c.Red, fmt = "bold" },
+        ErrorMsg = { fg = c.red, fmt = "bold" },
         WarningMsg = { fg = c.yellow, fmt = "bold" },
         MoreMsg = { fg = c.green, fmt = "bold" },
         IncSearch = { fg = c.bg0, bg = c.purple },

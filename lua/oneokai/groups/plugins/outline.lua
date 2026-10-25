@@ -1,4 +1,4 @@
-return function(c, cfg, colors)
+return function(c, cfg, fg)
     local groups = {
         FocusedSymbol = { fg = c.orange, bg = c.bg2, fmt = "bold" },
         AerialLine = { fg = c.orange, bg = c.bg2, fmt = "bold" },

@@ -1,4 +1,4 @@
-return function(c, cfg, colors)
+return function(c, cfg, fg)
     return {
         MiniCompletionActiveParameter = { fmt = "underline" },
 
@@ -14,12 +14,12 @@ return function(c, cfg, colors)
 
         MiniStarterCurrent = { fmt = "nocombine" },
         MiniStarterFooter = { fg = c.orange, fmt = "italic" },
-        MiniStarterHeader = colors.Yellow,
+        MiniStarterHeader = fg.yellow,
         MiniStarterInactive = { fg = c.grey, fmt = cfg.code_style.comments },
         MiniStarterItem = { fg = c.fg, bg = cfg.transparent and c.none or c.bg0 },
         MiniStarterItemBullet = { fg = c.grey },
         MiniStarterItemPrefix = { fg = c.yellow },
-        MiniStarterSection = colors.LightGrey,
+        MiniStarterSection = fg.light_grey,
         MiniStarterQuery = { fg = c.cyan },
 
         MiniStatuslineDevinfo = { fg = c.fg, bg = c.bg2 },

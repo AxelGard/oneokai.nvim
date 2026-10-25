@@ -1,4 +1,4 @@
-return function(c, cfg, colors)
+return function(c, cfg, fg)
     return {
         BufferCurrent = { fmt = "bold" },
         BufferCurrentMod = { fg = c.purple, fmt = "bold,italic" },

@@ -1,12 +1,12 @@
-return function(c, cfg, colors)
+return function(c, cfg, fg)
     return {
-        TelescopeBorder = colors.LightGrey,
-        TelescopePromptBorder = colors.LightGrey,
-        TelescopeResultsBorder = colors.LightGrey,
-        TelescopePreviewBorder = colors.LightGrey,
+        TelescopeBorder = fg.light_grey,
+        TelescopePromptBorder = fg.light_grey,
+        TelescopeResultsBorder = fg.light_grey,
+        TelescopePreviewBorder = fg.light_grey,
         TelescopeMatching = { fg = c.purple, fmt = "bold" },
-        TelescopePromptPrefix = colors.Red,
+        TelescopePromptPrefix = fg.red,
         TelescopeSelection = { bg = c.bg2 },
-        TelescopeSelectionCaret = colors.Yellow
+        TelescopeSelectionCaret = fg.yellow
     }
 end

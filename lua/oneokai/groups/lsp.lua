@@ -1,17 +1,17 @@
 local util = require("oneokai.util")
 
-return function(c, cfg, colors)
+return function(c, cfg, fg)
     local diagnostics_error_color = cfg.diagnostics.darker and c.red or c.red
     local diagnostics_hint_color = cfg.diagnostics.darker and c.dark_orange or c.orange
     local diagnostics_warn_color = cfg.diagnostics.darker and c.dark_yellow or c.yellow
     local diagnostics_info_color = cfg.diagnostics.darker and c.dark_cyan or c.cyan
 
     local groups = {
-        LspCxxHlGroupEnumConstant = colors.Purple,
-        LspCxxHlGroupMemberVariable = colors.Purple,
-        LspCxxHlGroupNamespace = colors.Green,
-        LspCxxHlSkippedRegion = colors.Grey,
-        LspCxxHlSkippedRegionBeginEnd = colors.Orange,
+        LspCxxHlGroupEnumConstant = fg.purple,
+        LspCxxHlGroupMemberVariable = fg.purple,
+        LspCxxHlGroupNamespace = fg.green,
+        LspCxxHlSkippedRegion = fg.grey,
+        LspCxxHlSkippedRegionBeginEnd = fg.orange,
 
         DiagnosticError = { fg = c.red },
         DiagnosticHint = { fg = c.orange },

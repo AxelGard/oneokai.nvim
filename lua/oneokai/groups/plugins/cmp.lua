@@ -1,10 +1,10 @@
-return function(c, cfg, colors)
+return function(c, cfg, fg)
     local groups = {
-        CmpItemAbbr = colors.Fg,
+        CmpItemAbbr = fg.fg,
         CmpItemAbbrDeprecated = { fg = c.light_grey, fmt = "strikethrough" },
-        CmpItemAbbrMatch = colors.Cyan,
+        CmpItemAbbrMatch = fg.cyan,
         CmpItemAbbrMatchFuzzy = { fg = c.cyan, fmt = "underline" },
-        CmpItemMenu = colors.LightGrey,
+        CmpItemMenu = fg.light_grey,
         CmpItemKind = { fg = c.orange, fmt = cfg.cmp_itemkind_reverse and "reverse" },
     }
 

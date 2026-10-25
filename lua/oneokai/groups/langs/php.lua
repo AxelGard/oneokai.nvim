@@ -1,18 +1,18 @@
-return function(c, cfg, colors)
+return function(c, cfg, fg)
     return {
         phpFunctions = { fg = c.fg, fmt = cfg.code_style.functions },
-        phpMethods = colors.Green,
-        phpStructure = colors.Red,
-        phpOperator = colors.Red,
-        phpMemberSelector = colors.Fg,
+        phpMethods = fg.green,
+        phpStructure = fg.red,
+        phpOperator = fg.red,
+        phpMemberSelector = fg.fg,
         phpVarSelector = { fg = c.purple, fmt = cfg.code_style.variables },
         phpIdentifier = { fg = c.purple, fmt = cfg.code_style.variables },
-        phpBoolean = colors.Cyan,
-        phpNumber = colors.Purple,
-        phpHereDoc = colors.Yellow,
-        phpNowDoc = colors.Yellow,
+        phpBoolean = fg.cyan,
+        phpNumber = fg.purple,
+        phpHereDoc = fg.yellow,
+        phpNowDoc = fg.yellow,
         phpSCKeyword = { fg = c.red, fmt = cfg.code_style.keywords },
         phpFCKeyword = { fg = c.red, fmt = cfg.code_style.keywords },
-        phpRegion = colors.Green
+        phpRegion = fg.green
     }
 end

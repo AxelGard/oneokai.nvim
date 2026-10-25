@@ -1,8 +1,8 @@
-return function(c, cfg, colors)
+return function(c, cfg, fg)
     return {
-        DashboardShortCut = colors.Yellow,
-        DashboardHeader = colors.Green,
-        DashboardCenter = colors.Cyan,
+        DashboardShortCut = fg.yellow,
+        DashboardHeader = fg.green,
+        DashboardCenter = fg.cyan,
         DashboardFooter = { fg = c.green, fmt = "italic" }
     }
 end

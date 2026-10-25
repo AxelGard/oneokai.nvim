@@ -1,13 +1,13 @@
-return function(c, cfg, colors)
+return function(c, cfg, fg)
     return {
-        GitSignsAdd = colors.Yellow,
-        GitSignsAddLn = colors.Yellow,
-        GitSignsAddNr = colors.Yellow,
-        GitSignsChange = colors.Green,
-        GitSignsChangeLn = colors.Green,
-        GitSignsChangeNr = colors.Green,
-        GitSignsDelete = colors.Orange,
-        GitSignsDeleteLn = colors.Orange,
-        GitSignsDeleteNr = colors.Orange
+        GitSignsAdd = fg.yellow,
+        GitSignsAddLn = fg.yellow,
+        GitSignsAddNr = fg.yellow,
+        GitSignsChange = fg.green,
+        GitSignsChangeLn = fg.green,
+        GitSignsChangeNr = fg.green,
+        GitSignsDelete = fg.orange,
+        GitSignsDeleteLn = fg.orange,
+        GitSignsDeleteNr = fg.orange
     }
 end

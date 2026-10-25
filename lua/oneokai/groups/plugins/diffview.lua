@@ -1,8 +1,8 @@
-return function(c, cfg, colors)
+return function(c, cfg, fg)
     return {
         DiffviewFilePanelTitle = { fg = c.green, fmt = "bold" },
         DiffviewFilePanelCounter = { fg = c.orange, fmt = "bold" },
-        DiffviewFilePanelFileName = colors.Fg,
+        DiffviewFilePanelFileName = fg.fg,
         DiffviewNormal = { link = "Normal" },
         DiffviewCursorLine = { link = "CursorLine" },
         DiffviewVertSplit = { link = "VertSplit" },
@@ -10,19 +10,19 @@ return function(c, cfg, colors)
         DiffviewStatusLine = { link = "StatusLine" },
         DiffviewStatusLineNC = { link = "StatusLineNC" },
         DiffviewEndOfBuffer = { link = "EndOfBuffer" },
-        DiffviewFilePanelRootPath = colors.Grey,
-        DiffviewFilePanelPath = colors.Grey,
-        DiffviewFilePanelInsertions = colors.Yellow,
-        DiffviewFilePanelDeletions = colors.Orange,
-        DiffviewStatusAdded = colors.Yellow,
-        DiffviewStatusUntracked = colors.Green,
-        DiffviewStatusModified = colors.Green,
-        DiffviewStatusRenamed = colors.Green,
-        DiffviewStatusCopied = colors.Green,
-        DiffviewStatusTypeChange = colors.Green,
-        DiffviewStatusUnmerged = colors.Green,
-        DiffviewStatusUnknown = colors.Orange,
-        DiffviewStatusDeleted = colors.Orange,
-        DiffviewStatusBroken = colors.Orange
+        DiffviewFilePanelRootPath = fg.grey,
+        DiffviewFilePanelPath = fg.grey,
+        DiffviewFilePanelInsertions = fg.yellow,
+        DiffviewFilePanelDeletions = fg.orange,
+        DiffviewStatusAdded = fg.yellow,
+        DiffviewStatusUntracked = fg.green,
+        DiffviewStatusModified = fg.green,
+        DiffviewStatusRenamed = fg.green,
+        DiffviewStatusCopied = fg.green,
+        DiffviewStatusTypeChange = fg.green,
+        DiffviewStatusUnmerged = fg.green,
+        DiffviewStatusUnknown = fg.orange,
+        DiffviewStatusDeleted = fg.orange,
+        DiffviewStatusBroken = fg.orange
     }
 end

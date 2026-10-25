@@ -6,13 +6,21 @@ local M = {}
 local hl = { langs = {}, plugins = {} }
 
 
+-- Convert a group's settings into an nvim_set_hl spec.
+-- Settings are { fg, bg, sp, fmt } where fmt is a comma separated list ("bold,italic"),
+-- or { link = "OtherGroup" } to link to another group.
+local function to_hl_spec(settings)
+    if settings.link then return { link = settings.link } end
+    local spec = { fg = settings.fg, bg = settings.bg, sp = settings.sp }
+    if settings.fmt and settings.fmt ~= "none" then
+        for attr in settings.fmt:gmatch("[^,%s]+") do spec[attr] = true end
+    end
+    return spec
+end
+
 local function vim_highlights(highlights)
     for group_name, group_settings in pairs(highlights) do
-        vim.api.nvim_command(string.format("highlight %s guifg=%s guibg=%s guisp=%s gui=%s", group_name,
-            group_settings.fg or "none",
-            group_settings.bg or "none",
-            group_settings.sp or "none",
-            group_settings.fmt or "none"))
+        vim.api.nvim_set_hl(0, group_name, to_hl_spec(group_settings))
     end
 end
 
@@ -132,165 +140,89 @@ hl.syntax = {
     Todo = { fg = c.orange, fmt = cfg.code_style.comments }
 }
 
-if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
-    hl.treesitter = {
-        ["@annotation"] = colors.Fg,
-        ["@attribute"] = colors.Fg,
-        ["@boolean"] = colors.Purple,
-        ["@character"] = colors.Yellow,
-        ["@comment"] = { fg = c.grey, fmt = cfg.code_style.comments },
-        ["@conditional"] = { fg = c.red, fmt = cfg.code_style.keywords },
-        ["@constant"] = colors.Purple,
-        ["@constant.builtin"] = colors.Purple,
-        ["@constant.macro"] = colors.Purple,
-        ["@constructor"] = { fg = c.green, fmt = "bold" },
-        ["@error"] = colors.Red,
-        ["@exception"] = colors.Red,
-        ["@field"] = colors.Fg,
-        ["@float"] = colors.Purple,
-        ["@function"] = { fg = c.green, fmt = cfg.code_style.functions },
-        ["@function.builtin"] = { fg = c.cyan, fmt = cfg.code_style.functions },
-        ["@function.macro"] = { fg = c.cyan, fmt = cfg.code_style.functions },
-        ["@include"] = colors.Red,
-        ["@keyword"] = { fg = c.red, fmt = cfg.code_style.keywords },
-        ["@keyword.function"] = { fg = c.cyan, fmt = cfg.code_style.functions },
-        ["@keyword.operator"] = { fg = c.red, fmt = cfg.code_style.keywords },
-        ["@label"] = colors.Red,
-        ["@method"] = colors.Green,
-        ["@namespace"] = colors.Fg,
-        ["@none"] = colors.Fg,
-        ["@number"] = colors.Purple,
-        ["@operator"] = colors.Red,
-        ["@parameter"] = colors.Orange,
-        ["@parameter.reference"] = colors.Orange,
-        ["@property"] = colors.Fg,
-        ["@punctuation.delimiter"] = colors.LightGrey,
-        ["@punctuation.bracket"] = colors.LightGrey,
-        ["@punctuation.special"] = colors.Red,
-        ["@repeat"] = { fg = c.red, fmt = cfg.code_style.keywords },
-        ["@string"] = { fg = c.yellow, fmt = cfg.code_style.strings },
-        ["@string.regex"] = { fg = c.purple, fmt = cfg.code_style.strings },
-        ["@string.escape"] = { fg = c.cyan, fmt = cfg.code_style.strings },
-        ["@string.special.url"] = { fg = c.blue, fmt = 'underline'},
-        ["@symbol"] = colors.Fg,
-        ["@tag"] = colors.Red,
-        ["@tag.attribute"] = colors.Green,
-        ["@tag.builtin"] = colors.Blue,
-        ["@tag.delimiter"] = colors.Fg,
-        ["@tag.builtin.tsx"] = colors.Red,
-        ["@text"] = colors.Fg,
-        ["@text.strong"] = { fg = c.fg, fmt = 'bold' },
-        ["@text.emphasis"] = { fg = c.fg, fmt = 'italic' },
-        ["@text.underline"] = { fg = c.fg, fmt = 'underline' },
-        ["@text.strike"] = { fg = c.fg, fmt = 'strikethrough' },
-        ["@text.title"] = { fg = c.purple, fmt = 'bold' },
-        ["@text.literal"] = colors.Yellow,
-        ["@text.uri"] = { fg = c.cyan, fmt = 'underline' },
-        ["@text.todo"] = { fg = c.orange, fmt = cfg.code_style.comments },
-        ["@text.math"] = colors.Fg,
-        ["@text.reference"] = colors.Green,
-        ["@text.environment"] = colors.Fg,
-        ["@text.environment.name"] = colors.Fg,
-        ["@text.diff.add"] = colors.Yellow,
-        ["@text.diff.delete"] = colors.Orange,
-        ["@note"] = colors.Fg,
-        ["@warning"] = colors.Yellow,
-        ["@danger"] = colors.Red,
-        ["@type"] = colors.Blue,
-        --["@type"] = colors.Cyan,
-        ["@type.builtin"] = colors.Cyan,
-        ["@variable"] = { fg = c.fg, fmt = cfg.code_style.variables },
-        ["@variable.parameter"] = colors.Orange,
-        ["@variable.parameter.bash"] = colors.Fg,
-        ["@variable.parameter.reference"] = colors.Orange,
-        ["@variable.builtin"] = { fg = c.orange, fmt = cfg.code_style.variables },
-        --["@lsp.typemod.class.declaration"] = colors.Cyan,
-        --["@keyword.type"] = colors.Cyan,
-        ["@keyword.type"] = colors.Red,
+-- Treesitter captures, see `:h treesitter-highlight-groups`.
+-- Captures that look the same as a syntax group link to it, so changing e.g. `Keyword` updates `@keyword` too.
+-- LSP semantic tokens (`@lsp.type.*`) link to these captures by default.
+hl.treesitter = {
+    ["@attribute"] = colors.Fg,
+    ["@boolean"] = { link = "Boolean" },
+    ["@character"] = { link = "Character" },
+    ["@comment"] = { link = "Comment" },
+    ["@comment.todo"] = { fg = c.orange, fmt = cfg.code_style.comments },
+    ["@comment.note"] = colors.Fg,
+    ["@comment.warning"] = colors.Yellow,
+    ["@comment.error"] = colors.Red,
+    ["@constant"] = colors.Purple,
+    ["@constant.builtin"] = colors.Purple,
+    ["@constant.macro"] = colors.Purple,
+    ["@constructor"] = { fg = c.green, fmt = "bold" },
+    ["@diff.plus"] = colors.Yellow,
+    ["@diff.minus"] = colors.Orange,
+    ["@function"] = { link = "Function" },
+    ["@function.builtin"] = { fg = c.cyan, fmt = cfg.code_style.functions },
+    ["@function.macro"] = { fg = c.cyan, fmt = cfg.code_style.functions },
+    ["@function.method"] = { link = "Function" },
+    ["@keyword"] = { link = "Keyword" },
+    ["@keyword.conditional"] = { link = "Conditional" },
+    ["@keyword.exception"] = { link = "Exception" },
+    ["@keyword.function"] = { fg = c.cyan, fmt = cfg.code_style.functions },
+    ["@keyword.import"] = { link = "Include" },
+    ["@keyword.operator"] = { link = "Keyword" },
+    ["@keyword.repeat"] = { fg = c.red, fmt = cfg.code_style.keywords },
+    ["@keyword.type"] = colors.Red,
+    ["@label"] = colors.Red,
+    ["@module"] = colors.Fg,
+    ["@none"] = colors.Fg,
+    ["@number"] = { link = "Number" },
+    ["@number.float"] = { link = "Float" },
+    ["@operator"] = { link = "Operator" },
+    ["@property"] = colors.Fg,
+    ["@punctuation.delimiter"] = { link = "Delimiter" },
+    ["@punctuation.bracket"] = { link = "Delimiter" },
+    ["@punctuation.special"] = colors.Red,
+    ["@string"] = { link = "String" },
+    ["@string.regexp"] = { fg = c.purple, fmt = cfg.code_style.strings },
+    ["@string.escape"] = { fg = c.cyan, fmt = cfg.code_style.strings },
+    ["@string.special.symbol"] = colors.Fg,
+    ["@string.special.url"] = { fg = c.blue, fmt = 'underline' },
+    ["@tag"] = colors.Red,
+    ["@tag.attribute"] = colors.Green,
+    ["@tag.builtin"] = colors.Blue,
+    ["@tag.delimiter"] = colors.Fg,
+    ["@tag.builtin.tsx"] = colors.Red,
+    ["@type"] = { link = "Type" },
+    --["@type"] = colors.Cyan,
+    ["@type.builtin"] = colors.Cyan,
+    ["@variable"] = { link = "Identifier" },
+    ["@variable.builtin"] = { fg = c.orange, fmt = cfg.code_style.variables },
+    ["@variable.member"] = { link = "Identifier" },
+    ["@variable.parameter"] = colors.Orange,
+    ["@variable.parameter.bash"] = colors.Fg,
+    --["@lsp.typemod.class.declaration"] = colors.Cyan,
+    --["@keyword.type"] = colors.Cyan,
 
-        ["@lsp.typemod.operator.userDefined"] = colors.Green,
+    ["@lsp.typemod.operator.userDefined"] = colors.Green,
 
-        ["@markup.raw.tsx"] = colors.Fg,
-        ["@markup.heading.1.tsx"] = colors.Fg,
+    -- markup (markdown, html, latex, ...)
+    ["@markup.heading"] = colors.Red,
+    ["@markup.strong"] = { fg = c.fg, fmt = 'bold' },
+    ["@markup.italic"] = { fg = c.fg, fmt = 'italic' },
+    ["@markup.underline"] = { fg = c.fg, fmt = 'underline' },
+    ["@markup.strikethrough"] = { fg = c.fg, fmt = 'strikethrough' },
+    ["@markup.raw"] = colors.Yellow,
+    ["@markup.link"] = colors.Blue,
+    ["@markup.link.url"] = { fg = c.cyan, fmt = 'underline' },
+    ["@markup.math"] = colors.Fg,
+    ["@markup.environment"] = colors.Fg,
+    ["@markup.raw.markdownBold"] = { fg = c.fg, fmt = "bold" },
+    ["@markup.raw.tsx"] = colors.Fg,
+    ["@markup.heading.1.tsx"] = colors.Fg,
 
-        -- markdown
-        ["@markup.heading"] = colors.Red,
-        ["@markup.link"] = colors.Blue,
-        ["@markup.raw.markdownBold"] = {fg = c.fg, fmt = "bold"},
+    -- C# / dotnet
+    ["@attribute.c_sharp"] = colors.Orange,
 
-
-        -- C# / dotnet 
-        ["@attribute.c_sharp"] = colors.Orange,
-
-        ["@property.json"] = colors.Cyan,
-
-
-
-
-    }
-else
-    hl.treesitter = {
-        TSAnnotation = colors.Fg,
-        TSAttribute = colors.Fg,
-        TSBoolean = colors.Purple,
-        TSCharacter = colors.Purple,
-        TSComment = { fg = c.grey, fmt = cfg.code_style.comments },
-        TSConditional = { fg = c.red, fmt = cfg.code_style.keywords },
-        TSConstant = colors.Purple,
-        TSConstBuiltin = colors.Purple,
-        TSConstMacro = colors.Purple,
-        TSConstructor = { fg = c.green, fmt = "bold" },
-        TSError = colors.Fg,
-        TSException = colors.Orange,
-        TSField = colors.Cyan,
-        TSFloat = colors.Purple,
-        TSFunction = { fg = c.green, fmt = cfg.code_style.functions },
-        TSFuncBuiltin = { fg = c.cyan, fmt = cfg.code_style.functions },
-        TSFuncMacro = { fg = c.cyan, fmt = cfg.code_style.functions },
-        TSInclude = colors.red,
-        TSKeyword = { fg = c.red, fmt = cfg.code_style.keywords },
-        TSKeywordFunction = { fg = c.red, fmt = cfg.code_style.functions },
-        TSKeywordOperator = { fg = c.red, fmt = cfg.code_style.keywords },
-        TSLabel = colors.Orange,
-        TSMethod = colors.Green,
-        TSNamespace = colors.Blue,
-        TSNone = colors.Fg,
-        TSNumber = colors.Purple,
-        TSOperator = colors.Fg,
-        TSParameter = colors.Orange,
-        TSParameterReference = colors.Orange,
-        TSProperty = colors.Fg,
-        TSPunctDelimiter = colors.LightGrey,
-        TSPunctBracket = colors.LightGrey,
-        TSPunctSpecial = colors.Orange,
-        TSRepeat = { fg = c.orange, fmt = cfg.code_style.keywords },
-        TSString = { fg = c.yellow, fmt = cfg.code_style.strings },
-        TSStringRegex = { fg = c.purple, fmt = cfg.code_style.strings },
-        TSStringEscape = { fg = c.orange, fmt = cfg.code_style.strings },
-        TSSymbol = colors.Fg,
-        TSTag = colors.Red,
-        TSTagDelimiter = colors.Fg,
-        TSText = colors.Fg,
-        TSStrong = { fg = c.fg, fmt = 'bold' },
-        TSEmphasis = { fg = c.fg, fmt = 'italic' },
-        TSUnderline = { fg = c.fg, fmt = 'underline' },
-        TSStrike = { fg = c.fg, fmt = 'strikethrough' },
-        TSTitle = { fg = c.purple, fmt = 'bold' },
-        TSLiteral = colors.Yellow,
-        TSURI = { fg = c.cyan, fmt = 'underline' },
-        TSMath = colors.Fg,
-        TSTextReference = colors.Green,
-        TSEnviroment = colors.Fg,
-        TSEnviromentName = colors.Fg,
-        TSNote = colors.Fg,
-        TSWarning = colors.Fg,
-        TSDanger = colors.Fg,
-        TSType = colors.Blue,
-        TSTypeBuiltin = colors.Cyan,
-        TSVariable = { fg = c.fg, fmt = cfg.code_style.variables },
-        TSVariableBuiltin = { fg = c.orange, fmt = cfg.code_style.variables },
-    }
-end
+    ["@property.json"] = colors.Cyan,
+}
 
 local diagnostics_error_color = cfg.diagnostics.darker and c.red or c.red
 local diagnostics_hint_color = cfg.diagnostics.darker and c.dark_orange or c.orange
@@ -309,8 +241,10 @@ hl.plugins.lsp = {
     DiagnosticInfo = { fg = c.blue },
     DiagnosticWarn = { fg = c.yellow },
 
-    DiagnosticVirtualTextError = { bg = cfg.diagnostics.background and util.darken(diagnostics_error_color, 0.1, c.bg0) or c.none,
-    fg = diagnostics_error_color },
+    DiagnosticVirtualTextError = {
+        bg = cfg.diagnostics.background and util.darken(diagnostics_error_color, 0.1, c.bg0) or c.none,
+        fg = diagnostics_error_color
+    },
     DiagnosticVirtualTextWarn = {
         bg = cfg.diagnostics.background and util.darken(diagnostics_warn_color, 0.1, c.bg0) or c.none,
         fg = diagnostics_warn_color
@@ -325,9 +259,9 @@ hl.plugins.lsp = {
     },
 
     DiagnosticUnderlineError = { fmt = cfg.diagnostics.undercurl and "undercurl" or "underline", sp = c.red },
-    DiagnosticUnderlineHint =  { fmt = cfg.diagnostics.undercurl and "undercurl" or "underline", sp = c.orange },
-    DiagnosticUnderlineInfo =  { fmt = cfg.diagnostics.undercurl and "undercurl" or "underline", sp = c.blue},
-    DiagnosticUnderlineWarn =  { fmt = cfg.diagnostics.undercurl and "undercurl" or "underline", sp = c.yellow },
+    DiagnosticUnderlineHint = { fmt = cfg.diagnostics.undercurl and "undercurl" or "underline", sp = c.orange },
+    DiagnosticUnderlineInfo = { fmt = cfg.diagnostics.undercurl and "undercurl" or "underline", sp = c.blue },
+    DiagnosticUnderlineWarn = { fmt = cfg.diagnostics.undercurl and "undercurl" or "underline", sp = c.yellow },
 
     LspReferenceText = { bg = c.bg2 },
     LspReferenceWrite = { bg = c.bg2 },
@@ -770,36 +704,43 @@ function M.setup()
         hl.plugins.navic["NavicIcons" .. kind] = { fg = color }
     end
 
-    vim_highlights(hl.common)
-    vim_highlights(hl.syntax)
-    vim_highlights(hl.treesitter)
-    for _, group in pairs(hl.langs) do vim_highlights(group) end
-    for _, group in pairs(hl.plugins) do vim_highlights(group) end
+    -- all theme groups in one table, so user overrides can be merged onto them
+    local groups = {}
+    local function collect(highlights) groups = vim.tbl_extend("force", groups, highlights) end
+    collect(hl.common)
+    collect(hl.syntax)
+    collect(hl.treesitter)
+    for _, group in pairs(hl.langs) do collect(group) end
+    for _, group in pairs(hl.plugins) do collect(group) end
 
-    -- user defined highlights: vim_highlights function cannot be used because it sets an attribute to none if not specified
-    local function replace_color(prefix, color_name)
-        if not color_name then return "" end
-        if color_name:sub(1, 1) == '$' then
-            local name = color_name:sub(2, -1)
-            color_name = c[name]
-            if not color_name then
-                vim.schedule(function()
-                    vim.notify('oneokai.nvim: unknown color "' .. name .. '"', vim.log.levels.ERROR,
-                        { title = "oneokai.nvim" })
-                end)
-                return ""
-            end
+    -- user defined highlights: colors can reference the palette with "$name"
+    local function replace_color(color_name)
+        if not color_name or color_name:sub(1, 1) ~= '$' then return color_name end
+        local name = color_name:sub(2, -1)
+        if not c[name] then
+            vim.schedule(function()
+                vim.notify('oneokai.nvim: unknown color "' .. name .. '"', vim.log.levels.ERROR,
+                    { title = "oneokai.nvim" })
+            end)
         end
-        return prefix .. "=" .. color_name
+        return c[name]
     end
 
-    for group_name, group_settings in pairs(vim.g.oneokai_config.highlights) do
-        vim.api.nvim_command(string.format("highlight %s %s %s %s %s", group_name,
-            replace_color("guifg", group_settings.fg),
-            replace_color("guibg", group_settings.bg),
-            replace_color("guisp", group_settings.sp),
-            replace_color("gui", group_settings.fmt)))
+    for group_name, group_settings in pairs(cfg.highlights) do
+        local user = {
+            fg = replace_color(group_settings.fg),
+            bg = replace_color(group_settings.bg),
+            sp = replace_color(group_settings.sp),
+            fmt = group_settings.fmt,
+            link = group_settings.link,
+        }
+        -- only the given attributes are overridden, the rest are kept from the theme
+        local base = groups[group_name] or {}
+        if base.link and not user.link then base = {} end
+        groups[group_name] = vim.tbl_extend("force", base, user)
     end
+
+    vim_highlights(groups)
 end
 
 return M

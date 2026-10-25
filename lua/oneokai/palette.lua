@@ -261,23 +261,23 @@ return {
 		bg_blue = "#54b0fd",
 		bg_yellow = "#f2cc81",
 		fg = "#1a1c1c",
-		purple = "#c75ae8",
-		green = "#8bcd5b",
-		orange = "#dd9046",
-		blue = "#41a7fc",
-		yellow = "#efbd5d",
-		cyan = "#34bfd0",
-		red = "#f65866",
-		grey = "#455574",
+		purple = "#9a18bf",
+		green = "#4f8f1f",
+		orange = "#c25a00",
+		blue = "#1f6fd0",
+		yellow = "#b58300",
+		cyan = "#11868f",
+		red = "#d4202f",
+		grey = "#5c6a85",
 		light_grey = "#6c7d9c",
 		dark_cyan = "#1b6a73",
 		dark_red = "#992525",
 		dark_yellow = "#8f610d",
 		dark_purple = "#862aa1",
-		diff_add = "#27341c",
-		diff_delete = "#331c1e",
-		diff_change = "#102b40",
-		diff_text = "#1c4a6e",
+		diff_add = "#d2e9c0",
+		diff_delete = "#f6d6d6",
+		diff_change = "#d4e4f4",
+		diff_text = "#b9d4ef",
 	},
     mat = {
 		black = "#1f2225", -- done
@@ -447,6 +447,37 @@ return {
         diff_delete  = "#3c1f1e",
         diff_change  = "#0e363e",
         diff_text    = "#4f6752",
+    },
+
+    idea_dark = {
+        -- Backgrounds + foreground from IntelliJ Islands Dark
+        black        = "#0f1011",
+        bg0          = "#191a1c", -- editor background (islands editor bg)
+        bg1          = "#1f2022", -- slightly lighter (island panel)
+        bg2          = "#2a2b2e", -- selection background
+        bg3          = "#313236", -- popup background
+        bg_d         = "#141517", -- darker background / gutter
+        bg_blue      = "#56a8f5",
+        bg_yellow    = "#d7cf8a",
+        fg           = "#bcbec4", -- islands foreground
+        -- Accents from oneokai 'dark', keeping Islands' signature keyword orange
+        orange       = "#cf8e6d", -- keywords (kept from Islands)
+        purple       = "#c678dd",
+        green        = "#98c379",
+        blue         = "#61afef",
+        yellow       = "#e5c07b",
+        cyan         = "#56b6c2",
+        red          = "#e86671",
+        grey         = "#5c6370",
+        light_grey   = "#848b98",
+        dark_cyan    = "#2b6f77",
+        dark_red     = "#993939",
+        dark_yellow  = "#93691d",
+        dark_purple  = "#8a3fa0",
+        diff_add     = "#31392b",
+        diff_delete  = "#382b2c",
+        diff_change  = "#1c3448",
+        diff_text    = "#2c5372",
     },
 
 	debug = {

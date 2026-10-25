@@ -221,6 +221,9 @@ hl.treesitter = {
     -- C# / dotnet
     ["@attribute.c_sharp"] = colors.Orange,
 
+    -- kotlin
+    ["@attribute.kotlin"] = colors.Cyan,
+
     ["@property.json"] = colors.Cyan,
 }
 

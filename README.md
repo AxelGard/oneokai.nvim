@@ -67,7 +67,7 @@ But I would recommend you use darker, darkplus.
 <img width="412" alt="Onedark - deep" src="./doc/oneokai_black.png">
 </p>
 
-### notdark, paper 
+### light, paper 
 
 <p float="left">
 <img width="412" alt="Onedark - cool" src="./doc/oneokai_notdark.png">
@@ -94,7 +94,7 @@ There are some pre defined styles of the oneokai theme:
 | | styles |
 |---|---|
 | dark | `dark`, `darker`, `darkplus`, `black`, `cool`, `deep`, `warm`, `warmer`, `idea_dark`, `mat`, `nord`, `everforest`, `catppuccin_macchiato`, `catppuccin_frappe`, `gruvbox_material` |
-| light | `notdark`, `paper` (`light` is the same as `notdark`) |
+| light | `light`, `paper` (`notdark` is the old name for `light` and still works) |
 
 The original ones are based on the [onedark.nvim#themes](https://github.com/navarasu/onedark.nvim#themes).
 The light styles also set `background=light`. An unknown style name shows a warning and falls back to `dark`.

@@ -3,19 +3,19 @@ local M = {}
 M.styles_list = { 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer', 'light', 'idea_dark' }
 
 -- other names for a style
-M.style_aliases = { light = 'notdark' }
+M.style_aliases = { notdark = 'light' } -- old name
 
 -- styles that use a light background
-M.light_styles = { paper = true, notdark = true }
+M.light_styles = { paper = true, light = true }
 
----Resolve a style name through the aliases ('light' -> 'notdark')
+---Resolve a style name through the aliases ('notdark' -> 'light')
 function M.resolve_style(style)
     return M.style_aliases[style] or style
 end
 
 M.config = {
     -- Main options --
-    style = 'dark',    -- any style in palette.lua, e.g. 'dark', 'darker', 'idea_dark', or the light styles 'paper' and 'notdark' ('light' is the same as 'notdark')
+    style = 'dark',    -- any style in palette.lua, e.g. 'dark', 'darker', 'idea_dark', or the light styles 'light' and 'paper'
     toggle_style_key = nil,
     toggle_style_list = M.styles_list,
     transparent = false,     -- don't set background

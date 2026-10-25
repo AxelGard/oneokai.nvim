@@ -29,7 +29,7 @@
 <img width="412" alt="Onedark - deep" src="./doc/oneokai_black.png">
 </p>
 
-### notdark, paper 
+### light, paper 
 
 <p float="left">
 <img width="412" alt="Onedark - cool" src="./doc/oneokai_notdark.png">
